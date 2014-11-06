@@ -1,0 +1,17 @@
+/* 
+CSS DOCUMENT 
+=============
+Author: Sahibjot Saggu
+Date: November 05, 2014
+Filename: style.css
+
+*/
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #333;
+}
