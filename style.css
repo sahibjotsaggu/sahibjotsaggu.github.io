@@ -7,11 +7,156 @@ Filename: style.css
 
 */
 
+@font-face {
+	font-family: Roboto;
+	src: url("fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: Roboto-Bold;
+	src: url("fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+	font-family: Roboto-Light;
+	src: url("fonts/Roboto-Light.ttf");
+}
+
 * {
 	margin: 0px;
 	padding: 0px;
 }
 
 body {
-	background: #333;
+	background: #FFF;
+	font-size: 100%;
+}
+
+#main_bg {
+	position: absolute;
+	top: 0em;
+	left: 0em;
+	width: 100%;
+	height: 40em;
+	background: #E38741 url("images/cursor.png") no-repeat center center;
+	background-size: 55em;
+}
+
+#top_nav_wrapper {
+	position: absolute;
+	top: 0em;
+	left: 0em;
+	width: 100%;
+	height: 10em;
+}
+
+#top_nav {
+	position: relative;
+	top: 2em;
+	left: 20%;
+	width: 60%;
+	height: 6.5em;
+}
+
+#top_nav ul {
+	list-style-type: none;
+}
+
+#top_nav ul li a {
+	float: right;
+	text-decoration: none;
+	width: 8em;
+	height: 2.5em;
+	text-align: center;
+	line-height: 2.5em;
+	font-family: Roboto-Bold;
+	margin-right: 1em;
+	margin-top: 1.6em;
+	font-size: 110%;
+	color: #FFF;
+	text-rendering: optimizeLegibility;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 0.3em;
+	-webkit-transition: background 0.2s;
+}
+
+#top_nav ul li a:hover {
+	background: rgba(255, 255, 255, 0.4);
+}
+
+#title {
+	position: absolute;
+	width: auto;
+	height: auto;
+	text-align: center;
+	font-family: Roboto-Bold;
+	font-size: 3em;
+	color: #FFF;
+	padding: 0.5em;
+	text-rendering: optimizeLegibility;
+	cursor: pointer;
+}
+
+#main_intro {
+	position: absolute;
+	top: 7em;
+	left: 20%;
+	width: auto;
+	height: auto;
+	font-size: 1.8em;
+	font-family: Roboto;
+	color: #FFF;
+	text-shadow: 0em 0em 0.0em #000;
+	/*background: rgba(255,255,255,0.2);*/
+	padding: 1em;
+	border-radius: 0.3em;
+}
+
+#main_intro p#main_line {
+	width: 13em;
+}
+
+#main_intro p#main_exp {
+	margin-top: 1.5em;
+	font-size: 65%;
+	width: 15em;
+	font-family: Roboto;
+}
+
+#tut_buttons {
+	position: absolute;
+	top: 22em;
+	left: 20%;
+	width: auto;
+	height: auto;
+	font-size: 1.2em;
+}
+
+#tut_buttons ul {
+	list-style-type: none;
+}
+
+#tut_buttons ul li {
+	display: inline-block;
+}
+
+#tut_buttons ul li a {
+	float: left;
+	text-decoration: none;
+	width: 8em;
+	height: 2em;
+	text-align: center;
+	line-height: 2em;
+	color: #FFF;
+	margin-left: 0.5em;
+	font-family: Roboto-Bold;
+	padding: 0.3em;
+	background: #006dc6;
+	border-radius: 0.3em;
+	box-shadow: 0.25em 0.25em 0em #00559b;
+	-webkit-transition: background 0.2s;
+}
+
+#tut_buttons ul li a:hover {
+	background: #047bd6;
 }
