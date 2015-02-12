@@ -1,4 +1,4 @@
 sahibjotsaggu.github.io
 =======================
 
-Redesigning www.wathelp.ca UI
+personal website (this is where the link 'sahibjot.me' will forward to)
