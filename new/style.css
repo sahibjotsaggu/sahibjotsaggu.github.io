@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #FFF;
+	overflow-x: hidden;
+}
+
+@font-face {
+	font-family: Bebas;
+	src: url("BebasNeue.otf");
+}
+
+#name {
+	position: absolute;
+	top: calc(50% - 29px);
+	left: calc(50% - 300px);
+	width: 600px;
+	height: 50px;
+	background: transparent;
+	z-index: 2;
+	font-family: Bebas;
+	text-align: center;
+	line-height: 55px;
+	color: #FFF;
+	font-size: 100px;
+}
+
+#slideshow {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 400%;
+	height: 90%;
+	box-shadow: 0px 0px 10px #444;
+}
+
+#pic1, #pic2, #pic3, #pic4 {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 25%;
+	height: 100%;
+	background: url("pic1.jpg") no-repeat center center fixed;
+	font-family: Bebas;
+	text-align: center;
+	color: #FFF;
+	font-size: 100px;
+	text-shadow: 0px 0px 10px #333;
+}
+
+#pic2 {
+	left: 25%;
+	background: url("pic2.jpg") no-repeat center center fixed;
+}
+
+#pic3 {
+	left: 50%;
+	background: url("pic3.jpg") no-repeat center center fixed;
+}
+
+#pic4 {
+	left: 75%;
+	background: url("pic4.jpg") no-repeat center center fixed;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 320px) {
+	#slideshow {
+		height: 100%;
+	}
+	#name {
+		font-size: 60px;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	#slideshow {
+		height: 85%;
+	}
+	#name {
+		font-size: 75px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#slideshow {
+		height: 85%;
+	}
+	#name {
+		font-size: 87px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	#slideshow {
+		height: 90%;
+	}
+	#name {
+		font-size: 100px;
+	}
+}

@@ -22,5 +22,12 @@ $(document).ready(function() {
             $(".nav_button div#bottom").css("transform", "rotateZ(0deg)");
             $(".nav_button div#bottom").css("top", "35px");
         }
-    })
+    });
+
+    $(".down_arrow").click(function() {
+        $("html, body").animate({
+            scrollTop : $(".tile2").offset().top
+        }, "easeOutBounce");
+        return false;
+    });
 });
