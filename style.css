@@ -27,7 +27,7 @@ body {
 
 .name {
 	position: absolute;
-	top: calc(50% - 75px);
+	top: 25%;
 	left: calc(50% - 400px);
 	width: 800px;
 	height: 150px;
