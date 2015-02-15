@@ -22,7 +22,7 @@
 
 body {
 	background: url("images/pic4.jpg") no-repeat;
-	background-size: cover;
+	background-size: 100%;
 }
 
 .name {
