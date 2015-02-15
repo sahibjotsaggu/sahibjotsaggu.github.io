@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $(".nav_button").click(function() {
         if ($(".nav_page").css("display") == "none") {
+            $(".nav_button").css("background", "rgba(0,0,0,0.9)");
             $(".nav_page").fadeIn();
             $(".nav_button div#middle").css("opacity", "0");
             $(".nav_button div#top").css("top", "25px");
@@ -9,6 +10,7 @@ $(document).ready(function() {
             $(".nav_button div#bottom").css("top", "25px");
         }
         else {
+            $(".nav_button").css("background", "rgba(0,0,0,0.2)");
             $(".nav_page").fadeOut();
             $(".nav_button div#middle").css("opacity", "1");
             $(".nav_button div#top").css("top", "15px");
