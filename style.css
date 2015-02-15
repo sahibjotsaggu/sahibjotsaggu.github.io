@@ -20,6 +20,10 @@
 	src: url("fonts/open-sans-condensed/OpenSans-CondBold.ttf");
 }
 
+body {
+	overflow-x: hidden;
+}
+
 .bg_wrapper {
 	position: absolute;
 	top: 0px;
@@ -88,6 +92,7 @@
 	width: 100%;
 	height: 100%;
 	background: #FFF;
+	opacity: 0.6;
 	display: none;
 }
 
