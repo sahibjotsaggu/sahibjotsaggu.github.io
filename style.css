@@ -21,7 +21,7 @@
 }
 
 body {
-	background: url("images/pic4.jpg") no-repeat center center fixed;
+	background: url("images/pic4.jpg") no-repeat fixed;
 	background-size: cover;
 }
 
@@ -50,6 +50,7 @@ body {
 	background: rgba(0, 0, 0, 0.2);
 	padding: 15px;
 	-webkit-transition: background 1s;
+	border-radius: 2px;
 	z-index: 2000;
 }
 
