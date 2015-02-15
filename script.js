@@ -13,6 +13,7 @@ $(document).ready(function() {
         else {
             $(".nav_button").css("background", "rgba(0,0,0,0.2)");
             $(".nav_page").fadeOut();
+            $(".name").fadeIn();
             $(".nav_button div#middle").css("opacity", "1");
             $(".nav_button div#top").css("top", "15px");
             $(".nav_button div#top").css("transform", "rotateZ(0deg)");
