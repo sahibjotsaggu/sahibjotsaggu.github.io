@@ -22,6 +22,8 @@
 
 body {
 	overflow-x: hidden;
+	background: url("images/mountain_background.png") no-repeat;
+	background-size: cover;
 }
 
 .bg_wrapper {
@@ -30,10 +32,53 @@ body {
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	background: url("images/pic1.jpg") no-repeat center center;
-	background-size: cover;
 }
 
+.bg_wrapper ul {
+	position: absolute;
+	left: -10%;
+	width: 100%;
+	height: 100%;
+	list-style-type: none;
+}
+
+.bg_wrapper ul #foreground_pic {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 120%;
+	height: 120%;
+	background: url("images/mountain_foreground.png") no-repeat center center;
+	background-size: 100%;
+}
+
+.bg_wrapper ul #name {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 110%;
+	height: 100%;
+	font-family: Raleway;
+	text-transform: uppercase;
+	font-size: 5.642em;
+	text-align: center;
+	line-height: 160px;
+	color: #FFF;
+	font-weight: 200;
+}
+
+.bg_wrapper ul #name #name_actual_text {
+	position: absolute;
+	/*top: 25%;*/
+	top: calc(50% - 75px);
+	left: calc(55% - 400px);
+	width: 800px;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+}
+
+/*
 .name {
 	position: fixed;
 	top: 25%;
@@ -51,8 +96,7 @@ body {
 
 .name ul {
 	list-style-type: none;
-}
-
+}*/
 .quote {
 	position: fixed;
 	top: calc(25% + 250px);
