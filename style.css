@@ -49,6 +49,10 @@ body {
 	font-weight: 200;
 }
 
+.name ul {
+	list-style-type: none;
+}
+
 .quote {
 	position: fixed;
 	top: calc(25% + 250px);

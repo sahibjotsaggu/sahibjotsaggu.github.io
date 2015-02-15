@@ -18,7 +18,11 @@
 
 		<div class="bg_wrapper"></div>
 
-		<div class="name">Sahibjot Saggu</div>
+		<div class="name">
+			<ul id="scene">
+				<li class="layer" data-depth="0.3">Sahibjot Saggu</li>
+			</ul>
+		</div>
 
 		<div class="quote">
 			<em>Simplicity is the ultimate sophistication.</em>
@@ -53,4 +57,9 @@
 	</body>
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="parallax.min.js"></script>
+	<script>
+	var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+	</script>
 </html>
