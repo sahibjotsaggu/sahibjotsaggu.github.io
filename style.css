@@ -22,8 +22,13 @@
 
 body {
 	overflow-x: hidden;
-	background: url("images/mountain_background.png") no-repeat;
-	background-size: cover;
+	background: #F598C4;
+}
+
+h1 {
+	font-family: Raleway;
+	font-weight: 100;
+	font-size: 50px;
 }
 
 .bg_wrapper {
@@ -32,6 +37,7 @@ body {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+
 }
 
 .bg_wrapper ul {
@@ -48,7 +54,7 @@ body {
 	left: 0px;
 	width: 120%;
 	height: 120%;
-	background: url("images/mountain_foreground.png") no-repeat center center;
+	background: url("images/mountain_foreground.png") no-repeat center bottom;
 	background-size: 100%;
 }
 
@@ -78,7 +84,7 @@ body {
 	text-align: center;
 }
 
-.bg_wrapper ul #quote_layer {
+.bg_wrapper ul #quote_layer, .bg_wrapper ul #who_i_am {
 	position: absolute;
 	top: 0px;
 	left: 0%;
@@ -86,23 +92,18 @@ body {
 	height: 100%;
 }
 
-.quote {
+#whoiam_text {
 	position: absolute;
-	top: calc(25% + 250px);
+	top: calc(25% + 200px);
 	left: calc(55% - 400px);
 	width: 800px;
 	height: 50px;
 	font-family: Raleway;
-	font-size: 1.5em;
-	line-height: 35px;
+	font-size: 2.5em;
+	line-height: 50px;
 	color: #FFF;
 	text-align: center;
 	font-weight: 200;
-}
-
-.quote span {
-	margin-left: 300px;
-	font-size: 0.8em;
 }
 
 .down_arrow {
@@ -115,17 +116,32 @@ body {
 	background-size: cover;
 	cursor: pointer;
 	-webkit-transition: bottom 0.1s;
+	-moz-transition: bottom 0.1s;
+	-transition: bottom 0.1s;
 }
 
 .down_arrow:hover {
 	bottom: 10px;
 }
 
-.tile2 {
+.tile2_wrapper {
 	position: absolute;
 	top: 100%;
 	left: 0px;
 	width: 100%;
 	height: 100%;
 	background: #FFF;
+}
+
+.tile2_wrapper #tile2_content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#tile2_content #greeting {
+	margin: 50px auto;
+	width: 100%;
+	text-align: center;
+	font-size: 80px;
 }
