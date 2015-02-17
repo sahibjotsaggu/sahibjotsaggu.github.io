@@ -37,7 +37,39 @@ h1 {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+}
 
+.bg_wrapper #phone_name, .bg_wrapper #phone_who_i_am {
+	display: none;
+}
+
+.bg_wrapper #phone_name {
+	position: absolute;
+	top: calc(20%);
+	left: 0px;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	color: #FFF;
+	font-family: Raleway;
+	text-transform: uppercase;
+	font-weight: 200;
+	font-size: 80px;
+}
+
+.bg_wrapper #phone_who_i_am {
+	position: absolute;
+	top: calc(20% + 275px);
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #FFF;
+	font-family: Raleway;
+	font-weight: 200;
+	font-size: 30px;
 }
 
 .bg_wrapper ul {
@@ -66,7 +98,7 @@ h1 {
 	height: 100%;
 	font-family: Raleway;
 	text-transform: uppercase;
-	font-size: 5.642em;
+	font-size: 85px;
 	text-align: center;
 	line-height: 160px;
 	color: #FFF;
@@ -99,7 +131,7 @@ h1 {
 	width: 800px;
 	height: 50px;
 	font-family: Raleway;
-	font-size: 2.5em;
+	font-size: 40px;
 	line-height: 50px;
 	color: #FFF;
 	text-align: center;
@@ -138,4 +170,19 @@ h1 {
 	width: 100%;
 	text-align: center;
 	font-size: 80px;
+}
+
+@media screen and (max-width: 768px) {
+	.bg_wrapper ul {
+		display: none;
+	}
+
+	.bg_wrapper #phone_name, .bg_wrapper #phone_who_i_am {
+		display: block;
+	}
+
+	.bg_wrapper {
+		background: url("images/mountain_foreground.png") no-repeat center bottom;
+		background-size: cover;
+	}
 }
