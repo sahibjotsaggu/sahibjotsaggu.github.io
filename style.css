@@ -186,7 +186,7 @@ h1 {
 	}
 
 	.bg_wrapper {
-		background: url("images/mountain_foreground.png") no-repeat center bottom;
+		background: url("images/mountain_foreground.jpg") no-repeat center bottom;
 		background-size: cover;
 	}
 }
