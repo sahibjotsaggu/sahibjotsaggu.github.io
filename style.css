@@ -60,7 +60,7 @@ h1 {
 
 .bg_wrapper #phone_who_i_am {
 	position: absolute;
-	top: calc(20% + 275px);
+	bottom: 20%;
 	left: 10%;
 	width: 80%;
 	height: 40px;
