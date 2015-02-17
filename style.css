@@ -107,7 +107,7 @@ h1 {
 }
 
 .down_arrow {
-	position: fixed;
+	position: absolute;
 	bottom: 20px;
 	left: calc(50% - 35px);
 	width: 70px;
@@ -133,13 +133,7 @@ h1 {
 	background: #FFF;
 }
 
-.tile2_wrapper #tile2_content {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-#tile2_content #greeting {
+.tile2_wrapper #greeting {
 	margin: 50px auto;
 	width: 100%;
 	text-align: center;
