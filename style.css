@@ -12,19 +12,19 @@
 
 body {
 	overflow-x: hidden;
-	background: #F598C4;
+	background: #FFF!important;
 }
 
 h1 {
-	font-family: Raleway;
-	font-weight: 200;
-	font-size: 70px;
+	font-family: Raleway!important;
+	font-weight: 200!important;
+	font-size: 70px!important;
 }
 
 p {
-	font-family: Raleway;
-	font-size: 20px;
-	font-weight: 300;
+	font-family: Raleway!important;
+	font-size: 20px!important;
+	font-weight: 300!important;
 }
 
 .loader_wrapper {
@@ -43,6 +43,7 @@ p {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+	background: #F598C4;
 }
 
 .bg_wrapper #phone_name, .bg_wrapper #phone_who_i_am {
@@ -197,10 +198,42 @@ p {
 	text-align: center;
 }
 
+.container .row .col-md-12 {
+	background: no-repeat center center;
+	background-size: 100%;
+	text-align: center;
+	font-family: Raleway;
+	font-size: 30px;
+	color: #CCC;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-transition: color 0.5s;
+}
+
+.container .row .col-md-12:hover {
+	color: #000;
+}
+
+.container .row:nth-child(1) .col-md-12 {
+	background-image: url("images/citykit_mockup.jpg");
+}
+
+.container .row:nth-child(2) .col-md-12 {
+	background-image: url("images/wathelp_mockup.jpg");
+}
+
+.container .row:nth-child(3) .col-md-12 {
+	background-image: url("images/uwnrg_mockup.jpg");
+}
+
+.container .row:nth-child(4) .col-md-12 {
+	background-image: url("images/sahibjot_mockup.jpg");
+}
+
 @media screen and (max-width: 768px) {
 
 	h1 {
-		font-size: 40px;
+		font-size: 40px!important;
 	}
 
 	.bg_wrapper ul, .down_arrow {
