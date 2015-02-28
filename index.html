@@ -9,8 +9,8 @@
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<title>Sahibjot Saggu</title>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="style-min.css" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<!--<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />-->
 	</head>
 	<body>
 
@@ -23,11 +23,11 @@
 
 		<div class="bg_wrapper">
 			<ul id="scene">
-				<li class="layer" id="foreground_pic" data-depth="0.50"></li>
-				<li class="layer" id="name" data-depth="0.3">
+				<li class="layer" id="foreground_pic" data-depth="0.40"></li>
+				<li class="layer" id="name" data-depth="0.55">
 					<div id="name_actual_text">Sahibjot Saggu</div>
 				</li>
-				<li class="layer" id="who_i_am" data-depth="0.40">
+				<li class="layer" id="who_i_am" data-depth="0.60">
 					<div id="whoiam_text">Engineering Student / Web Developer</div>
 				</li>
 			</ul>
@@ -47,19 +47,13 @@
 				<h1 id="greeting">Hello there!</h1>
 				<div id="about_me">I'm a front-end and back-end web developer near Waterloo, Ontario with a passion for modern web design and minimal user interfaces. I currently attend the University of Waterloo for Nanotechnology Engineering.
 				</div>
-				<h1 id="projects_txt">My Portfolio</h1>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">citykit</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">WatHelp</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">UWNRG</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">This Website!</div>
+				<div class="projects_wrapper">
+					<h1 id="projects_txt">My Portfolio</h1>
+					<div id="projects_list">
+						<div id="project1"></div>
+						<div id="project2"></div>
+						<div id="project3"></div>
+						<div id="project4"></div>
 					</div>
 				</div>
 			</div> <!-- end tile2_content div -->
@@ -75,13 +69,13 @@
     var parallax = new Parallax(scene);
 	</script>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-59917238-1', 'auto');
 	  ga('send', 'pageview');
-
+*/
 	</script>	
 </html>

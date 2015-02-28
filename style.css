@@ -43,7 +43,8 @@ p {
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	background: #F598C4;
+	background: #107acc;
+/* F598C4 */	
 }
 
 .bg_wrapper #phone_name, .bg_wrapper #phone_who_i_am {
@@ -93,7 +94,7 @@ p {
 	left: 0px;
 	width: 120%;
 	height: 120%;
-	background: url("images/mountain_foreground.png") no-repeat center bottom;
+	background: url("images/mainbg.png") no-repeat center bottom;
 	background-size: 100%;
 }
 
@@ -190,44 +191,49 @@ p {
 	font-size: 23px;
 	line-height: 43px;
 	font-family: Raleway;
+	padding-bottom: 30px;
 }
 
-.tile2_wrapper #projects_txt {
+.tile2_wrapper .projects_wrapper {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.tile2_wrapper .projects_wrapper #projects_txt {
 	padding: 30px 0px 30px 0px;
 	width: 100%;
-	text-align: center;
 }
 
-.container .row .col-md-12 {
-	background: no-repeat center center;
-	background-size: 100%;
-	text-align: center;
-	font-family: Raleway;
-	font-size: 30px;
-	color: #CCC;
-	-webkit-transition: color 0.5s;
-	-moz-transition: color 0.5s;
-	-transition: color 0.5s;
+.tile2_wrapper .projects_wrapper #projects_list {
+	margin-left: 10%;
+	width: 80%;
+	height: auto;
 }
 
-.container .row .col-md-12:hover {
-	color: #000;
+.tile2_wrapper .projects_wrapper #projects_list div {
+	width: 100%;
+	height: 800px;
+	margin-top: 30px;
 }
 
-.container .row:nth-child(1) .col-md-12 {
-	background-image: url("images/citykit_mockup.jpg");
+.tile2_wrapper .projects_wrapper #projects_list div:nth-child(1) {
+	background: url("images/citykit.jpg") no-repeat center center;
+	background-size: cover;
 }
 
-.container .row:nth-child(2) .col-md-12 {
-	background-image: url("images/wathelp_mockup.jpg");
+.tile2_wrapper .projects_wrapper #projects_list div:nth-child(2) {
+	background: url("images/wathelp.jpg") no-repeat center center;
+	background-size: cover;
 }
 
-.container .row:nth-child(3) .col-md-12 {
-	background-image: url("images/uwnrg_mockup.jpg");
+.tile2_wrapper .projects_wrapper #projects_list div:nth-child(3) {
+	background: url("images/uwnrg.jpg") no-repeat center center;
+	background-size: cover;
 }
 
-.container .row:nth-child(4) .col-md-12 {
-	background-image: url("images/sahibjot_mockup.jpg");
+.tile2_wrapper .projects_wrapper #projects_list div:nth-child(4) {
+	background: url("images/sahibjot.jpg") no-repeat center center;
+	background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -245,7 +251,7 @@ p {
 	}
 
 	.bg_wrapper {
-		background: url("images/mountain_foreground.jpg") no-repeat center bottom;
+		background: url("images/mainbg.jpg") no-repeat center bottom;
 		background-size: cover;
 	}
 
@@ -265,8 +271,8 @@ p {
 		text-align: center;
 	}
 
-	.tile2_wrapper #projects_txt {
-		width: 100%;
-		text-align: center;
-	}
+}
+
+@media screen and (max-width: 1000px) {
+
 }

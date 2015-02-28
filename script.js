@@ -2,8 +2,10 @@ $(document).ready(function() {
 
 	//$(".loader_wrapper").delay(3000).fadeOut();
 
-	var get_col_width = $(".container .row .col-md-12").width();
-	$(".container .row .col-md-12").css("height", get_col_width + "px");
+    $(".tile2_wrapper .projects_wrapper #projects_list div").css("height", $("#projects_list").width()*(9/16));
+
+	var get_col_width = $(".projects_wrapper .projects_list ul li").width();
+    $(".projects_wrapper .projects_list ul li").css("height", get_col_width);
 
 
     $(".down_arrow").click(function() {
@@ -15,8 +17,11 @@ $(document).ready(function() {
 
     // on window resize
     $(window).resize(function() {
-		var get_col_width = $(".container .row .col-md-12").width();
-		$(".container .row .col-md-12").css("height", get_col_width + "px");
+		var get_col_width = $(".projects_wrapper .projects_list ul li").width();
+        $(".projects_wrapper .projects_list ul li").css("height", get_col_width);
+
+        $("#greeting").text($(window).width());
+        $(".tile2_wrapper .projects_wrapper #projects_list div").css("height", $("#projects_list").width()*(9/16));
 
     })
 
