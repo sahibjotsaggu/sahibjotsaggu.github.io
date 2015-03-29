@@ -241,6 +241,20 @@ footer {
 	width: 100%;
 	height: 300px;
 	background: #222;
+	background-size: 100%;
+}
+
+footer #myname {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-family: Raleway;
+	font-size: 40px;
+	text-align: center;
+	line-height: 100px;
+	color: #FFF;
+	font-weight: 200;
 }
 
 @media screen and (max-width: 768px) {
@@ -276,6 +290,15 @@ footer {
 	.tile2_wrapper #greeting {
 		width: 100%;
 		text-align: center;
+	}
+
+	.tile2_wrapper .projects_wrapper #projects_list {
+		margin-left: 0%;
+		width: 100%;
+	}
+
+	.tile2_wrapper .projects_wrapper #projects_list div {
+		margin-top: 15px;
 	}
 
 }
