@@ -1394,17 +1394,18 @@ footer .footer_content .footer_content_wrapper {
 
 @media only screen and (max-width: 600px) {
 	.top_banner h1 {
-		top: calc(50% - 150px);
+		top: none;
+		bottom: 200px;
 		font-size: 30px;
 		line-height: 50px;
 	}
 	.top_banner .start_button {
-		top: calc(50% - 5px);
+		bottom: 130px;
 		left: calc(50% - 125px);
 	}
 
 	#sponsor_button {
-		top: calc(50% + 80px);
+		bottom: 50px;
 		left: calc(50% - 125px);
 		background: #115077;
 	}
