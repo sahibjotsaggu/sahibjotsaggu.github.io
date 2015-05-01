@@ -14,6 +14,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body {
 	background: #FFF;
 	font-family: Montserrat;
+	overflow-x: hidden; 
 }
 
 /* typed js cursor animation */
@@ -87,12 +88,13 @@ header .dd_menu {
 	background: url("../img/hamburger.png") no-repeat center center;
 	background-size: 50%;
 	cursor: pointer;
+	display: none;
 }
 
 .searchbox_wrapper, .dd_searchbox_wrapper {
 	position: absolute;
 	top: 10px;
-	left: 300px;
+	left: 280px;
 	min-width: 300px;
 	width: calc(100%);
 	max-width: calc(100% - 1080px);
@@ -131,7 +133,7 @@ header .dd_menu {
 
 .dd_search {
 	position: absolute;
-	top: 0px;
+	top: 80px;
 	left: 0px;
 	width: 100%;
 	height: 60px;
@@ -149,10 +151,86 @@ header .dd_menu {
 	left: 0px;
 	min-width: 100px;
 	width: calc(100%);
-	max-width: calc(100% - 100px);
+	max-width: calc(100% - 120px);
 	height: 30px;
 	padding: 10px;
 	border-radius: 3px;
+	margin-left: 10px;
+}
+
+.mobile_sidebar {
+	position: absolute;
+	top: 0px;
+	right: -85%;
+	width: 80%;
+	height: 100%;
+	background: #132028;
+	box-shadow: -2px 0px 10px #000;
+	z-index: 2500;
+	-webkit-transition: 0.5s right;
+	-moz-transition: 0.5s right;
+	-o-transition: 0.5s right;
+	transition: 0.5s right;
+	display: none;
+}
+
+.mobile_sidebar .close_sidebar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 80px;
+	height: 80px;
+	background: url("../img/close.png") no-repeat center center;
+	background-size: 35%;
+	cursor: pointer;
+}
+
+.mobile_sidebar h1 {
+	width: calc(100% - 20px);
+	height: 80px;
+	text-align: right;
+	line-height: 75px;
+	font-family: Montserrat;
+	font-weight: 700;
+	font-size: 50px;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.mobile_sidebar .sidebar_access_buttons {
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	width: 100%;
+	height: 110px;
+}
+
+.mobile_sidebar .sidebar_access_buttons ul li {
+	display: block;
+	color: #FFF;
+	width: 80%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-family: Montserrat;
+	background: #CA3435;
+	padding: 5px;
+	border-radius: 2px;
+	transition: 0.3s;
+	margin-left: 10%;
+	margin-top: 10px;
+}
+
+.mobile_sidebar .sidebar_access_buttons ul li a {
+	text-decoration: none;
+	float: left;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+}
+
+.mobile_sidebar .sidebar_access_buttons ul .signup_button {
+	background: #107ACC;
 }
 
 .mainlist {
@@ -1370,6 +1448,12 @@ footer .footer_content .footer_content_wrapper {
 	.searchbox_wrapper {
 		max-width: calc(100% - 450px);
 	}
+	header .dd_menu, .mobile_sidebar {
+		display: block;
+	}
+	.mobile_sidebar {
+		width: 40%;
+	}
 
 }
 
@@ -1383,12 +1467,18 @@ footer .footer_content .footer_content_wrapper {
 	footer {
 		display: none;
 	}
+	.mobile_sidebar {
+		width: 45%;
+	}
 }
 
 @media only screen and (max-width: 620px) {
 	.top_banner .start_button {
-			bottom: calc(50% - 200px);
-		}
+		bottom: calc(50% - 200px);
+	}
+	.mobile_sidebar {
+		width: 60%;
+	}		
 }
 
 
@@ -1402,10 +1492,12 @@ footer .footer_content .footer_content_wrapper {
 		bottom: 130px;
 		left: calc(50% - 125px);
 	}
-
 	#sponsor_button {
 		bottom: 50px;
 		left: calc(50% - 125px);
 		background: #115077;
 	}
+	.mobile_sidebar {
+		width: 80%;
+	}	
 }
