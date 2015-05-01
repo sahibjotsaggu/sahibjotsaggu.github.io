@@ -1394,8 +1394,7 @@ footer .footer_content .footer_content_wrapper {
 
 @media only screen and (max-width: 600px) {
 	.top_banner h1 {
-		top: none;
-		bottom: 200px;
+		top: 100px;
 		font-size: 30px;
 		line-height: 50px;
 	}
