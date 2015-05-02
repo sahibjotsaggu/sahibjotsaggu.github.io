@@ -161,8 +161,8 @@ header .dd_menu {
 .mobile_sidebar {
 	position: absolute;
 	top: 0px;
-	right: -85%;
-	width: 80%;
+	right: -95%;
+	width: 90%;
 	height: 100%;
 	background: #132028;
 	box-shadow: -2px 0px 10px #000;

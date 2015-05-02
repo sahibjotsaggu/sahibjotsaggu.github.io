@@ -30,14 +30,14 @@ $(document).ready(function() {
 			$(".mobile_sidebar").css("right", "0px");
 		}
 		else {
-			$(".mobile_sidebar").css("right", "-85%");
+			$(".mobile_sidebar").css("right", "-95%");
 		}
 	});
 
 	/* clicking the 'x' to close sidebar */
 	$(".close_sidebar").click(function() {
 		if ($(".mobile_sidebar").css("right") == "0px") {
-			$(".mobile_sidebar").css("right", "-85%");
+			$(".mobile_sidebar").css("right", "-95%");
 		}
 	});
 
