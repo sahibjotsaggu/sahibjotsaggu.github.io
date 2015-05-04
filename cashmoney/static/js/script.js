@@ -26,18 +26,18 @@ $(document).ready(function() {
 
 	/* clicking the hamburger icon on mobile */
 	$(".dd_menu").click(function() {
-		if ($(".mobile_sidebar").css("right") != "0px") { 
-			$(".mobile_sidebar").css("right", "0px");
+		if ($(".mobile_sidebar").css("top") != "0px") { 
+			$(".mobile_sidebar").css("top", "0px");
 		}
 		else {
-			$(".mobile_sidebar").css("right", "-95%");
+			$(".mobile_sidebar").css("top", "-260px");
 		}
 	});
 
 	/* clicking the 'x' to close sidebar */
 	$(".close_sidebar").click(function() {
-		if ($(".mobile_sidebar").css("right") == "0px") {
-			$(".mobile_sidebar").css("right", "-95%");
+		if ($(".mobile_sidebar").css("top") == "0px") {
+			$(".mobile_sidebar").css("top", "-260px");
 		}
 	});
 
