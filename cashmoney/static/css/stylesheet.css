@@ -1529,12 +1529,12 @@ footer .footer_content .footer_content_wrapper {
 	.searchbox_wrapper {
 		display: none;
 	}
-	main {
+	/*main {
 		display: none;
 	}
 	footer {
 		display: none;
-	}
+	}*/
 }
 
 @media only screen and (max-width: 620px) {
