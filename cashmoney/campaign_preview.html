@@ -8,6 +8,7 @@ document.write("Campaign Description: " + sessionStorage.user_camp_description +
 document.write("Campaign Duration: " + sessionStorage.user_camp_duration + "<br>");
 </script>-->
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,10 +17,12 @@ document.write("Campaign Duration: " + sessionStorage.user_camp_duration + "<br>
         <link rel="stylesheet" type="text/css" href="static/css/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="static/foundation/foundation-icons.css" />
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
         <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
+
     </head>
     <body>
         <header>
@@ -71,9 +74,19 @@ document.write("Campaign Duration: " + sessionStorage.user_camp_duration + "<br>
         		</div>
         		<section class="camp_funding" style="background-size: 60% 100%;">
         			<h2>$ <script>document.write(0.6 * sessionStorage.user_camp_funding);</script> <span class="curr">CAD</span></h2>
-        			<h4>Campaign Goal $ <script>document.write(sessionStorage.user_camp_funding);</script></h4>
+        			<h4>Campaign Goal $ <script>document.write(sessionStorage.user_camp_funding);</script> | 26 Days Left</h4>
         			<div class="fund_button">Fund This Campaign</div>
         		</section>
+                <section class="camp_desc">
+                    <div class="camp_desc_title">Description</div>
+                    <p>
+                        <script>
+                            var t = sessionStorage.user_camp_description;
+                            t = t.replace(/\r?\n/g, '<br />');
+                            document.write(t);
+                        </script>
+                    </p>
+                </section>
         		<div class="camp_sponsors_title">Sponsors</div>
         		<section class="camp_preview_sponsors_list">
         			<div class="prev_sponsors_list_wrapper">
@@ -102,7 +115,10 @@ document.write("Campaign Duration: " + sessionStorage.user_camp_duration + "<br>
         					</li>
         				</ul>
         			</div>
-        			<div class="shadow"></div>
+                    <div class="shadow"></div>
+                    <div class="camp_prev"><a href="campaign_creation.html">Back to Preview</a></div>
+                    <div class="camp_submit"><a href="campaign_submit.html">Create Campaign</a></div>
+        			
         		</section>
         	</section>
         </main>
