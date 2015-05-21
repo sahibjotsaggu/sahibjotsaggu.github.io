@@ -1,0 +1,41 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "Web map application based on Esri bootstrap-map-js template",
+  "main": "gruntfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahibjotsaggu/website.git"
+  },
+  "keywords": [
+    "esri",
+    "maps",
+    "bootstrap"
+  ],
+  "author": "sahibjotsaggu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahibjotsaggu/website/issues"
+  },
+  "homepage": "https://github.com/sahibjotsaggu/website",
+
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-bower-task": "~0.3.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-gh-pages": "~0.9.1",
+    "connect-livereload": "~0.3.2",
+    "grunt-open": "~0.2.3"
+
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
