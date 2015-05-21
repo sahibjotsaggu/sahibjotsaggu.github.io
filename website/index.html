@@ -30,41 +30,59 @@
     <body ng-controller="MyController as my">
         <!-- header -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-main">
-            <div class="container">
-                <div class="navbar-header">
-                    <!--<button type="button" id="navbar-hamburger" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar" style="background: #FFF;"></span>
-                      <span class="icon-bar" style="background: #FFF;"></span>
-                      <span class="icon-bar" style="background: #FFF;"></span>
-                  </button>-->
-                    <a class="navbar-brand" href="#">
-                        <img src="images/logo.png" />
-                    </a>
-                </div>
-                <div class="hamburger-icon"></div>
-                <div class="input-group">
-                    <input type="text" id="search-box" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
-                </div>
-                <div class="search-icon-right">
-                    <span class="glyphicon glyphicon-search white" aria-hidden="true"></span>
-                </div>
-                <div class="close-icon-right">
-                    <span class="glyphicon glyphicon-remove white" aria-hidden="true"></span>
-                </div>
+            <div class="hamburger-icon"></div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span>Genome Ticket Manager</span>
+                </a>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="search-box" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+            </div>
+            <div class="search-icon-right">
+                <span class="glyphicon glyphicon-search white" aria-hidden="true"></span>
+            </div>
+            <div class="close-icon-right">
+                <span class="glyphicon glyphicon-remove white" aria-hidden="true"></span>
             </div>
         </nav>
         <!-- end header -->
 
+        <!-- page shadow -->
+        <div class="page-shadow"></div>
+        <!-- end page shadow -->
+
+        <!-- sidebar -->
+        <section class="sidebar">
+            <!--<nav class="navbar navbar-default navbar-fixed-top navbar-main sidebar-header">
+                <div class="genome-icon"></div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <span>GTM</span>
+                    </a>
+                </div>
+            </nav>-->
+            <div class="sidebar-banner">
+                <div class="sidebar-profile"></div>
+                <div class="sidebar-user-info">
+                    <p class="bold">Sahibjot Saggu</p>
+                    <p>ssaggu@klick.com</p>
+                </div>
+            </div>
+        </section>
+        <!-- end sidebar -->
+
         <!-- cards -->
+        <div class="row" style="margin: 0; padding: 0;">
         <section class="cards-wrapper" style="margin-top: 64px;">
             <section class="cards" ng-repeat="words in my.product">
-
-                <div class="col-sm-6" style="padding-top: 1px;">
+                <div class="col-sm-4" style="padding-top: 1px;">
                     <div class="mat-card">
                         <div class="mat-image">
                             <img src="{{words.imgsrc}}" />
                         </div>
+                        <div class="fab" id="{{words.imgsrc}}"></div>
                         <h3>{{words.heading}}</h3>
                         <p>{{words.desc}}</p>
                         <div class="flat-button">Share<span class="underline"></span></div>
@@ -73,6 +91,7 @@
                 </div>
             </section>
         </section>
+    </div>
         <!-- end cards -->
 
         <!-- Bootstrap core JavaScript
@@ -81,6 +100,11 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <!--
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        -->
         <script src="js/script.js"></script>
     </body>
 </html>
