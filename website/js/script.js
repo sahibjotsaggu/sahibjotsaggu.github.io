@@ -35,18 +35,22 @@ $("document").ready(function() {
 
     $(".hamburger-icon").click(function() {
         $(".sidebar").css("left", "0px");
-        $(".page-shadow").css("left", "300px");
+        /*$(".page-shadow").css("left", "300px");
         $(".page-shadow").css("width", "calc(100% - 300px)");
         $(".page-shadow").css("z-index", "10000");
-        $(".page-shadow").css("background-color", "rgba(0,0,0,0.5)");
+        $(".page-shadow").css("background-color", "rgba(0,0,0,0.5)");*/
+    });
+
+    $(".sidebar").click(function() {
+        $(".sidebar").css("left", "-300px");
     });
 
     $(".page-shadow").click(function() {
         $(".sidebar").css("left", "-300px");
-        $(".page-shadow").css("left", "0px");
+        /*$(".page-shadow").css("left", "0px");
         $(".page-shadow").css("width", "100%");
         $(".page-shadow").css("background-color", "rgba(0,0,0,0)");
-        $(".page-shadow").css("z-index", "-5");
+        $(".page-shadow").css("z-index", "-5");*/
     });
 
 
