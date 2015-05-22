@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="images/favicon.png">
 
-        <title>Bitcoin Boyz</title>
+        <title>Genome Ticket Manager</title>
         <!-- Bootstrap core CSS -->
         <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
         <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -27,11 +27,11 @@
         <![endif]-->
     </head>
 
-    <body ng-controller="MyController as my" id="face">
+    <body ng-controller="myCtrl" id="face">
         <!-- header -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-main">
             <div class="hamburger-icon"></div>
-            <!--<div class="back-icon"><span class="glyphicon glyphicon-arrow-left gray"></span></div>-->
+            <div class="back-icon"><img class="med" src="material-design-icons/hardware/2x_web/ic_keyboard_backspace_grey600_18dp.png" /></div>
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
                     <span>Genome Ticket Manager</span>
@@ -42,10 +42,10 @@
                 <input type="text" id="search-box" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
             </div>
             <div class="search-icon-right">
-                <span class="glyphicon glyphicon-search white" aria-hidden="true"></span>
+                <img class="med" src="images/ic_search_white_18dp.png" />
             </div>
             <div class="close-icon-right">
-                <span class="glyphicon glyphicon-remove gray" aria-hidden="true"></span>
+                <img class="med" src="material-design-icons/navigation/2x_web/ic_close_grey600_18dp.png" />
             </div>
         </nav>
         <!-- end header -->
@@ -89,17 +89,16 @@
         <!-- cards -->
         <div class="row" style="margin: 0; padding: 0;">
             <section class="cards-wrapper" style="margin-top: 64px;">
-                <section class="cards" ng-repeat="words in my.product">
-                    <div class="col-sm-4" style="padding-top: 1px;">
+                <section class="cards" ng-repeat="entry in tickets">
+                    <div class="col-md-3 col-sm-6" style="padding-top: 1px;">
                         <div class="mat-card">
-                            <div class="mat-image">
+                            <!--<div class="mat-image">
                                 <img src="{{words.imgsrc}}" />
                             </div>
-                            <div class="fab" id="{{words.imgsrc}}"></div>
-                            <h3>{{words.heading}}</h3>
-                            <p>{{words.desc}}</p>
-                            <div class="flat-button">Share<span class="underline"></span></div>
-                            <div class="flat-button">Explore<span class="underline"></span></div>
+                            <div class="fab" id="{{words.imgsrc}}"></div>-->
+                            <h3 ng-model="ticketName">{{entry.Title}}</h3>
+                            <p class="task-desc" ng-bind-html="ticketDesc">{{ticketDesc}}</p>
+                            <div class="flat-button">More Info<span class="underline"></span></div>
                         </div>
                     </div>
                 </section>
@@ -113,10 +112,12 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>
         <!--<script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>-->
 
-        <script src="js/hammer.min.js"></script>
+        <!--<script src="js/hammer.min.js"></script>-->
         <script src="js/script.js"></script>
+
     </body>
 </html>

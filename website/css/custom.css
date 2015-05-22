@@ -1,6 +1,7 @@
 body {
     font-family: "Roboto";
     font-size: 13px;
+    overflow-y: auto;
 }
 
 p {
@@ -18,7 +19,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     margin: 0px;
     padding-left: 15px;
+    padding-right: 15px;
     padding-top: 20px;
+    padding-bottom: 2px;
 }
 
 .page-shadow {
@@ -30,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0,0,0,0);
     z-index: -5;
     -webkit-transition: background-color 0.3s, left 0.3s, width 0.3s;
+}
+
+.navbar {
+    -webkit-transition: background 0.3s;
 }
 
 .navbar-main {
@@ -69,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-icon {
-    position: relative;
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 64px;
@@ -77,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     line-height: 64px;
     cursor: pointer;
+    display: none;
 }
 
 .input-group {
@@ -139,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 64px;
     height: 64px;
     text-align: center;
-    line-height: 67px;
+    line-height: 64px;
     cursor: pointer;
 }
 
@@ -148,7 +156,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gray {
-    color: #DDD;
+    color: #ADADAD;
+}
+
+/* Material Icons */
+.med {
+    width: 25px;
+    height: 25px;
 }
 
 .close-icon-right {
@@ -248,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mat-card {
     width: 100%;
-    height: auto;
+    min-height: 200px;
     border-radius: 3px;
     box-shadow: -1px 2px 6px #a5a5a5;
     margin-top: 12px;
@@ -291,8 +305,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .flat-button {
-    float: left;
-    position: relative;
+    position: absolute;
+    bottom: 10px;
+    left: 0px
     width: auto;
     height: auto;
     padding: 10px;
@@ -334,6 +349,8 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
     }
 
-
+    .mat-card {
+        height: 150px;
+    }
 
 }
