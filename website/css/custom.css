@@ -1,5 +1,6 @@
 body {
     font-family: "Roboto";
+    font-size: 13px;
 }
 
 p {
@@ -32,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-main {
-    /*padding-top: 7px;
+    /*pa2dding-top: 7px;
     padding-bottom: 7px;*/
     background: #3F51B5;
     border: none;
@@ -67,6 +68,17 @@ h1, h2, h3, h4, h5, h6 {
     background-size: 50%;
 }
 
+.back-icon {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    line-height: 64px;
+    cursor: pointer;
+}
+
 .input-group {
     position: absolute;
     top: 8px;
@@ -87,11 +99,11 @@ h1, h2, h3, h4, h5, h6 {
 #search-box {
     width: 100%;
     border: none;
-    background: #3F51B5;
+    background: #FFF;
     border-radius: 1px 0px 0px 1px;
     box-shadow: none;
     font-family: Roboto!important;
-    color: #FFF!important;
+    color: #000!important;
     font-size: 18px;
     font-weight: 400;
 }
@@ -135,6 +147,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFF;
 }
 
+.gray {
+    color: #DDD;
+}
+
 .close-icon-right {
     display: none;
 }
@@ -149,6 +165,9 @@ h1, h2, h3, h4, h5, h6 {
     background: #FFF;
     z-index: 1500;
     -webkit-transition: left 0.3s;
+    box-shadow: 0px 1px 3px #000;
+    overflow-y: scroll;
+    /* REMOVE BOX SHADOW WHEN SIDEBAR HIDDEN */
 }
 
 .sidebar-header {
@@ -176,13 +195,53 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar-banner .sidebar-user-info {
     position: absolute;
-    top: 91px;
-    left: 20px;
+    top: 101px;
+    width: 100%;
+    text-indent: 20px;
 }
 
 .sidebar-user-info p {
     padding: 0;
     margin: 0;
+}
+
+.sidebar-content {
+    width: 100%;
+}
+
+.sidebar-content ul {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    list-style-type: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+}
+
+.sidebar-content ul li a span {
+    text-align: center;
+    width: 60px;
+}
+
+.sidebar-content ul li a .sidebar-counter {
+    position: absolute;
+    right: 0px;
+    color: #888;
+}
+
+.sidebar-content ul li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    color: #000;
+    font-weight: bold;
+    -webkit-transition: background 0.2s;
+}
+
+.sidebar-content ul li a:hover {
+    background: #EEE;
 }
 
 /* Cards */
@@ -274,6 +333,7 @@ h1, h2, h3, h4, h5, h6 {
     .hamburger-icon {
         display: block;
     }
+
 
 
 }
