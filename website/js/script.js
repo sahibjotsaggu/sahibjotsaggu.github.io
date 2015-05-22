@@ -36,7 +36,7 @@ $("document").ready(function() {
         openSidebar();
     });
 
-    var hammertime = new Hammer(document.getElementById('sidebar'));
+    var hammertime = new Hammer(document.getElementById('face'));
         hammertime.on('panright', function() {
             openSidebar();
     });
