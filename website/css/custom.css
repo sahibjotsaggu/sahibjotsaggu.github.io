@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-shadow {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sidebar */
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: -300px;
     width: 300px;
