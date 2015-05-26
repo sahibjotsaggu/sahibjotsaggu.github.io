@@ -1,0 +1,95 @@
+<style>
+body { color: white; }
+
+.container {
+/*    overflow: hidden; */
+    position:relative;
+}
+.innerContainer{
+/*    width:100%; */
+}
+
+
+@-webkit-keyframes floatOut {
+    from {
+        opacity: 1;
+        -webkit-transform: translate(-200px, 0);
+    }
+    50% {
+        opacity: 0;
+        -webkit-transform: translate(-500px, 0);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+
+.view{
+    position: absolute;
+    /* float: left; */
+    padding:0;
+    margin:0;
+    opacity: 0;
+    left:200px;
+    width:300px;
+    height:200px;
+}
+.view-active{
+    -webkit-transition: all 0.8s ease-out, opacity 0.4s ease-out;
+    -webkit-transform: translate(-200px, 0);
+    opacity: 1;
+}
+.view-deactive{
+    -webkit-animation-name: floatOut;
+    -webkit-animation-duration: .8s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-out;
+}
+</style>
+
+<button id="showA">A</button><button id="showB">B</button><button id="showC">C</button>
+<div class="container">
+    <div class="innerContainer">
+        <div id="viewA" style="background-color:blue" class="view">VIEW A</div>
+        <div id="viewB" style="background-color:red" class="view ">VIEW B</div>
+        <div id="viewC" style="background-color:green" class="view ">VIEW C</div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+var fadeOut = function() {
+    return $('.container div').animate({
+        opacity: 0.25,
+        margin: '+=250'
+    }, 2000);
+};
+var transitionToView = function($view) {
+//    $.when( fadeOut )
+//        .pipe( $('.container div').removeClass('active') );
+    var $allViews = $('.view');
+    var $activeViews = $('.view-active');
+
+    $activeViews.removeClass('view-active').addClass('view-deactive');
+
+    //$allViews.removeClass('view-active').addClass('view-deactive');
+
+    $view.removeClass('view-deactive').addClass('view-active');
+
+    //alert('hi');
+};
+
+$('#showA').click(function() {
+    transitionToView($('#viewA'));
+});
+$('#showB').click(function() {
+    transitionToView($('#viewB'));
+});
+$('#showC').click(function() {
+    transitionToView($('#viewC'));
+});
+
+</script>

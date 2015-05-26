@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testing">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="images/genome.png">
+
+        <title>Genome Ticket Manager</title>
+        <!-- Bootstrap core CSS -->
+        <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+        <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+
+        <!-- Custom CSS -->
+        <link href="css/custom.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="face" ng-controller="myCtrl">
+        <!-- header -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-main">
+            <div class="hamburger-icon"></div>
+            <div class="back-icon"><img class="med" src="images/ic_keyboard_backspace_grey600_18dp.png" /></div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span>Genome Task Manager</span>
+                </a>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="search-box" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+            </div>
+            <div class="search-icon-right">
+                <img class="med" src="images/ic_search_white_18dp.png" />
+            </div>
+            <div class="clear-icon-right">
+                <img class="med" src="images/ic_close_grey600_18dp.png" />
+            </div>
+        </nav>
+        <!-- end header -->
+
+        <!-- page shadow -->
+        <div class="page-shadow"></div>
+        <!-- end page shadow -->
+
+        <!-- sidebar -->
+        <section class="sidebar" id="sidebar">
+            <!--<nav class="navbar navbar-default navbar-fixed-top navbar-main sidebar-header">
+                <div class="genome-icon"></div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <span>GTM</span>
+                    </a>
+                </div>
+            </nav>-->
+            <div class="sidebar-banner">
+                <div class="sidebar-profile"></div>
+                <div class="sidebar-user-info">
+                    <p class="bold">Sahibjot Saggu</p>
+                    <p>ssaggu@klick.com</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span>Notifications<span class="sidebar-counter">0</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-tasks"></span>Tasks</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Calendar</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- end sidebar -->
+
+        <!-- cards -->
+        <div class="row" style="margin: 0; padding: 0;">
+            <section class="cards-wrapper" style="margin-top: 64px;">
+                <section class="cards" ng-repeat="task in all_tasks">
+                    <div class="col-md-4 col-sm-6" style="padding-top: 1px;">
+                        <div class="mat-card">
+                            <!--<div class="mat-image">
+                                <img src="{{words.imgsrc}}" />
+                            </div>
+                            <div class="fab" id="{{words.imgsrc}}"></div>-->
+                            <h4>{{task.title}}</h4>
+                            <p class="gray">#{{task.task_id}}</p>
+                            <div class="flat-button" ng-init="matask=task.task_id" data-toggle="modal" data-target="#myModal" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <!-- end cards -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
