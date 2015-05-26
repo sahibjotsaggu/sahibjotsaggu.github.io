@@ -338,6 +338,27 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.modal-content {
+    border-radius: 3px;
+}
+
+.modal-header {
+    border: none;
+    padding: 0px;
+    margin: 0;
+}
+
+.modal-body {
+    overflow-y: scroll;
+    border: none;
+    max-height: 300px;
+}
+
+.modal-footer {
+    height: 60px;
+    padding: 0px;
+    border: none;
+}
 
 /* media queries */
 
@@ -357,5 +378,4 @@ h1, h2, h3, h4, h5, h6 {
     /*.mat-card {
         height: 150px;
     }*/
-
 }

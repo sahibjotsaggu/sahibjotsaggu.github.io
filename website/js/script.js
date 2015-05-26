@@ -290,6 +290,7 @@
                     temp_info["title"] = temp_info["title"].substring(0, 57) + "...";
                 }
                 temp_info["task_id"] = data.Entries[x].TicketID;
+                temp_info["desc"] = data.Entries[x].Description;
                 $scope.all_tasks.push(temp_info);
             }
 
@@ -298,6 +299,7 @@
                 for (var each_task = 0; each_task < $scope.all_tasks.length; each_task++) {
                     if ($scope.all_tasks[each_task].task_id == id) {
                         $("#myModalLabel").text($scope.all_tasks[each_task].title);
+                        $(".modal-body").html($scope.all_tasks[each_task].desc);
                     }
                 }
             };
@@ -307,7 +309,7 @@
 })();
 
 $(document).ready(function() {
-
+    
     $(".fab").click(function() {
         alert($(this).attr('id'));
     });
