@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "genome-task-manager",
   "version": "0.0.1",
   "description": "Web map application based on Esri bootstrap-map-js template",
   "main": "gruntfile.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahibjotsaggu/website.git"
+    "url": "https://github.com/sahibjotsaggu/genome-task-manager.git"
   },
   "keywords": [
     "esri",
@@ -21,9 +21,9 @@
   "author": "sahibjotsaggu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sahibjotsaggu/website/issues"
+    "url": "https://github.com/sahibjotsaggu/genome-task-manager/issues"
   },
-  "homepage": "https://github.com/sahibjotsaggu/website",
+  "homepage": "https://github.com/sahibjotsaggu/genome-task-manager",
 
   "devDependencies": {
     "grunt": "~0.4.2",

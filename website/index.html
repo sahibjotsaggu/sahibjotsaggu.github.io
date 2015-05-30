@@ -98,7 +98,7 @@
                             <div class="fab" id="{{words.imgsrc}}"></div>-->
                             <h4>{{task.title}}</h4>
                             <p class="gray">#{{task.task_id}}</p>
-                            <div class="flat-button" ng-init="matask=task.task_id" data-toggle="modal" data-target="#myModal" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
+                            <div class="flat-button" data-toggle="modal" data-target="#myModal" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -107,6 +107,19 @@
                                         </div>
                                         <div class="modal-body">
                                             If you see this message, something is very wrong.
+                                        </div>
+                                        <div class="modal-comments">
+                                        <h5 class="gray" style="padding-bottom: 10px;">All Comments</h5>
+                                            <ul>
+                                                <li ng-repeat="comment in task.comment_info" ng-show="task.has_comments">
+                                                    <div class="comment-pic" style="{{comment.UserPhotoPath}}"></div>
+                                                    <div class="comment-info">
+                                                        <div class="comment-creator">{{comment.UserName}}</div>
+                                                        <div class="comment-time gray">{{comment.Created}}</div>
+                                                        <div class="comment-txt" ng-bind-html="comment.Comment"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                         <div class="modal-footer">
                                         <div class="flat-button" data-dismiss="modal">Close<span class="underline"></span></div>
@@ -121,6 +134,35 @@
                 </section>
             </section>
         </div>
+
+        <!--<div class="row" style="margin: 0; padding: 0">
+            <section class="cards-wrapper" style="margin-top: 64px;">
+                <section class="cards">
+                    <div class="col-md-4 col-sm-6" style="padding-top: 1px;">
+                        <div class="mat-card">
+                            <div class="mat-image">
+                                <img src="https://unsplash.imgix.net/photo-1429041966141-44d228a42775?fit=crop&fm=jpg&h=700&q=75&w=1050" />
+                            </div>
+                            <div class="fab"></div>
+                            <h4>Golden Gate Bridge not so Golden</h4>
+                            <p class="gray">Find out why the Golden Gate Bridge has changed its colour!</p>
+                            <div class="flat-button">More Info<span class="underline"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" style="padding-top: 1px;">
+                        <div class="mat-card">
+                            <div class="mat-image">
+                                <img src="https://unsplash.imgix.net/photo-1428976365951-b70e0fa5c551?fit=crop&fm=jpg&q=75&w=1050" />
+                            </div>
+                            <div class="fab"></div>
+                            <h4>Help us find out what the hell this thing is!</h4>
+                            <p class="gray">Legend has it, it's actually the the Prison of Azkaban</p>
+                            <div class="flat-button">More Info<span class="underline"></span></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>-->
         <!-- end cards -->
 
 
@@ -136,6 +178,8 @@
         <script src="js/angular.min.js"></script>
         <script src="js/angular-sanitize.min.js"></script>
         <script src="js/moment.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/main.js"></script>
+        <!--<script data-main="js/common" src="js/require.js"></script>-->
+
     </body>
 </html>
