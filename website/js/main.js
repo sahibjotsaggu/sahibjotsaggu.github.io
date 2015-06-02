@@ -145,7 +145,7 @@
         .success(function(user) {
             var user_id = user.Entries[0].UserID;
             // with the user's id, getting the user's open tickets 
-            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + 3446 + "&TicketStatusIsOpen=true&MaxRecords=100")
+            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + user_id + "&TicketStatusIsOpen=true&MaxRecords=100")
             .success(function(data) {
                 $scope.all_tasks = [];
                 for (var x = 0; x < data.NumEntries; x++) {
