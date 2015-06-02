@@ -255,6 +255,7 @@ $(document).ready(function() {
     function openSidebar() {
         $(".sidebar").addClass("sb-open");
         $(".page-shadow").addClass("ps-on");
+        $(".mymodal").addClass("mymodal-on");
     }
 
     function closeSidebar() {
