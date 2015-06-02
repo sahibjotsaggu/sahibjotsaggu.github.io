@@ -1,7 +1,8 @@
 body {
     font-family: "Roboto";
-    font-size: 13px;
+    font-size: 13px!important;
     overflow-y: auto;
+    background: #EEE;
 }
 
 p {
@@ -16,7 +17,7 @@ p.bold {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 300!important;
     margin: 0px;
     padding-left: 15px;
     padding-right: 15px;
@@ -43,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     /*pa2dding-top: 7px;
     padding-bottom: 7px;*/
     background: #3F51B5;
+    background: #0D47A1;
     border: none;
     box-shadow: 0px 0px 5px #000;
 }
@@ -51,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 8px;
     left: 70px;
-    font-size: 18px;
+    font-size: 18px!important;
     line-height: 20px;
     color: #FFF!important;
     text-rendering: optimizeLegibility;
@@ -112,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
     font-family: Roboto!important;
     color: #000!important;
-    font-size: 18px;
+    font-size: 18px!important;
     font-weight: 400;
 }
 
@@ -140,15 +142,54 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFF;
 }
 
-.search-icon-right, .clear-icon-right{
+.search-icon-right, .clear-icon-right, .dd-icon-right {
     position: absolute;
-    right: 0px;
+    right: 64px;
     top: 0px;
     width: 64px;
     height: 64px;
     text-align: center;
     line-height: 64px;
     cursor: pointer;
+}
+
+.clear-icon-right {
+    right: 0px;
+    background: #FFF;
+}
+
+.dd-icon-right {
+    right: 0px;
+}
+
+.dropdown ul {
+    position: absolute;
+    top: -59px;
+    right: 5px;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    background: #FFF;
+    -webkit-transition: 0.3s;
+    -webkit-transform-origin: 120px 0px;
+    -webkit-transform: scale(0);
+}
+
+.dropdown ul li a {
+    display: block;
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #000;
+    -webkit-transition: background 0.2s;
+}
+
+.dropdown ul li a:hover {
+    background: #DDD;
 }
 
 .white {
@@ -362,6 +403,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
     border-top: 1px solid #EEE;
+    overflow-y: scroll;
+    max-height: 350px;
 }
 
 .modal-comments ul {

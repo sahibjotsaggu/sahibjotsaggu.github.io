@@ -44,8 +44,18 @@
             <div class="search-icon-right">
                 <img class="med" src="images/ic_search_white_18dp.png" />
             </div>
+            <div class="dd-icon-right">
+                <img class="med" src="images/ic_more_vert_black_18dp.png" />
+            </div>
             <div class="clear-icon-right">
                 <img class="med" src="images/ic_close_grey600_18dp.png" />
+            </div>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
             </div>
         </nav>
         <!-- end header -->
@@ -99,40 +109,42 @@
                             <h4>{{task.title}}</h4>
                             <p class="gray">#{{task.task_id}}</p>
                             <div class="flat-button" data-toggle="modal" data-target="#myModal" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="myModalLabel"></h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            If you see this message, something is very wrong.
-                                        </div>
-                                        <div class="modal-comments">
-                                        <h5 class="gray" style="padding-bottom: 10px;">All Comments</h5>
-                                            <ul>
-                                                <li ng-repeat="comment in task.comment_info" ng-show="task.has_comments">
-                                                    <div class="comment-pic" style="{{comment.UserPhotoPath}}"></div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-creator">{{comment.UserName}}</div>
-                                                        <div class="comment-time gray">{{comment.Created}}</div>
-                                                        <div class="comment-txt" ng-bind-html="comment.Comment"></div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <div class="flat-button" data-dismiss="modal">Close<span class="underline"></span></div>
-                                            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>-->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </section>
             </section>
+        </div>
+
+         <div class="modal fade {{task.task_id}}" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">{{modal_data.task_title}}</h4>
+                    </div>
+                    <div class="modal-body" ng-bind-html="modal_data.task_desc">
+                        
+                    </div>
+                    <div class="modal-comments" ng-show="modal_data.has_comments">
+                    <h5 class="gray" style="padding-bottom: 10px;">All Comments</h5>
+                        <ul class="comments_list">
+                            <li ng-repeat="comment in modal_data.comment_info.Entries">
+                                <div class="comment-pic" style="{{comment.UserPhotoPath}}"></div>
+                                <div class="comment-info">
+                                    <div class="comment-creator">{{comment.UserName}}</div>
+                                    <div class="comment-time gray">{{comment.Created}}</div>
+                                    <div class="comment-txt" ng-bind-html="comment.Comment"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                    <div class="flat-button" data-dismiss="modal">Close<span class="underline"></span></div>
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--<div class="row" style="margin: 0; padding: 0">
@@ -143,8 +155,8 @@
                             <div class="mat-image">
                                 <img src="https://unsplash.imgix.net/photo-1429041966141-44d228a42775?fit=crop&fm=jpg&h=700&q=75&w=1050" />
                             </div>
-                            <div class="fab"></div>
-                            <h4>Golden Gate Bridge not so Golden</h4>
+                            <!--<div class="fab"></div>-->
+                            <!--<h4>Golden Gate Bridge not so Golden</h4>
                             <p class="gray">Find out why the Golden Gate Bridge has changed its colour!</p>
                             <div class="flat-button">More Info<span class="underline"></span></div>
                         </div>
@@ -154,15 +166,15 @@
                             <div class="mat-image">
                                 <img src="https://unsplash.imgix.net/photo-1428976365951-b70e0fa5c551?fit=crop&fm=jpg&q=75&w=1050" />
                             </div>
-                            <div class="fab"></div>
-                            <h4>Help us find out what the hell this thing is!</h4>
+                            <!--<div class="fab"></div>-->
+                            <!--<h4>Help us find out what the hell this thing is!</h4>
                             <p class="gray">Legend has it, it's actually the the Prison of Azkaban</p>
                             <div class="flat-button">More Info<span class="underline"></span></div>
                         </div>
                     </div>
                 </section>
             </section>
-        </div>-->
+        </div>
         <!-- end cards -->
 
 

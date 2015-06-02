@@ -139,15 +139,14 @@
 
 (function() {
     var app = angular.module('testing', ['ngSanitize']);
-    app.controller('myCtrl', ['$http', '$scope', function($http, $scope){
+    app.controller('myCtrl', ['$http', '$scope', function($http, $scope) {
       // api call to get current user's id
         $http.jsonp("https://genome.klick.com:443/api/User/Current?callback=JSON_CALLBACK")
         .success(function(user) {
             var user_id = user.Entries[0].UserID;
             // with the user's id, getting the user's open tickets 
-            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + user_id + "&TicketStatusIsOpen=true&MaxRecords=100")
+            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + 3446 + "&TicketStatusIsOpen=true&MaxRecords=100")
             .success(function(data) {
-                console.log(data);
                 $scope.all_tasks = [];
                 for (var x = 0; x < data.NumEntries; x++) {
                     var temp_info = {};
@@ -157,16 +156,19 @@
                     }
                     temp_info["task_id"] = data.Entries[x].TicketID;
                     temp_info["desc"] = data.Entries[x].Description;
-                    $http.jsonp("http://genome.klick.com:80/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + data.Entries[x].TicketID)
+                    temp_info["current_user"] = user_id;
+                    $scope.all_tasks.push(temp_info);
+                };
+                $scope.showModal = function(id) {
+                    $scope.modal_data = {};
+                    $http.jsonp("http://genome.klick.com:80/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(comment) {
-                        //console.log(comment);
                         if (comment.NumEntries == 0) {
-                            temp_info["has_comments"] = false;
-                            //console.log("1");
+                            $scope.modal_data["has_comments"] = false;
+                            $scope.modal_data["comment_info"] = [];
                         }
                         else {
-                            temp_info["has_comments"] = true;
-                            //console.log("2");
+                            $scope.modal_data["has_comments"] = true;
                             // convert the unix date stamp to a readable format using momentjs
                             for (var each_comment = 0; each_comment < comment.NumEntries; each_comment++) {
                                 var c_time = comment.Entries[each_comment].Created;
@@ -174,28 +176,15 @@
                                 var c_user_img = comment.Entries[each_comment].UserPhotoPath;
                                 comment.Entries[each_comment].UserPhotoPath = "background: url('http://genome.klick.com" + c_user_img + "') no-repeat center center; background-size: cover;";
                             }
-                            temp_info["comment_info"] = comment;
+                            $scope.modal_data["comment_info"] = comment;
                         }
-                        //console.log(com)
-  
-                        
-                        console.log(temp_info);
+                        console.log($scope.modal_data);
                     });
-                    console.log(temp_info);
-                    $scope.all_tasks.push(temp_info);
-                    //console.log($scope.all_tasks);
-                    
-                };
-                //console.log($scope.all_tasks);
-    
-                $scope.showModal = function(id) {
-                    $("#myModalLabel").text(id);
-                    for (var each_task = 0; each_task < $scope.all_tasks.length; each_task++) {
-                        if ($scope.all_tasks[each_task].task_id == id) {
-                            $("#myModalLabel").text($scope.all_tasks[each_task].title);
-                            $(".modal-body").html($scope.all_tasks[each_task].desc);
-                        }
-                    }
+                    $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&TicketID=" + id)
+                    .success(function(user_info) {
+                        $scope.modal_data['task_desc'] = user_info.Entries[0].Description;
+                        $scope.modal_data['task_title'] = user_info.Entries[0].Title;
+                    });
                 };
             });
         });
@@ -225,6 +214,10 @@ $(document).ready(function() {
         $("#search-box").focus();
     });
 
+    $(".dd-icon-right").click(function() {
+        $(".dropdown ul").css("transform", "scale(1)");
+    })
+
     $(".clear-icon-right").click(function() {
         $("#search-box").val("");
         $("#search-box").focus();
@@ -238,6 +231,10 @@ $(document).ready(function() {
         $(".back-icon").css("display", "none");
         $(".search-icon-right").css("display", "block");
     });
+
+    $("body").click(function() {
+        $(".dropdown").css("-webkit-transition", "scale(0)");
+    })
 
     $(document).keyup(function(e) {
     //if (e.keyCode == 13) $('.save').click();     // enter
