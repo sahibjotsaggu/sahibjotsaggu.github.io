@@ -25,10 +25,57 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="https://apis.google.com/js/client:platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="950185271921-6lt5gd8dblnhd6gnhat6k0vqavj2ks9g.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     </head>
 
     <body id="face" ng-controller="myCtrl">
+    <!--<script>
+    function getStatus() {
+        /*var auth2 = gapi.auth2.getAuthInstance();
+        if (!auth2.isSignedIn.get()) {
+            // move to login page
+            console.log("login. go to login.html");
+        }*/
+        /**
+ * The Sign-In client object.
+ */
+var auth2;
+
+/**
+ * Initializes the Sign-In client.
+ */
+var initClient = function() {
+    gapi.load('auth2', function(){
+        /**
+         * Retrieve the singleton for the GoogleAuth library and set up the
+         * client.
+         */
+        auth2 = gapi.auth2.init({
+            client_id: '950185271921-6lt5gd8dblnhd6gnhat6k0vqavj2ks9g.apps.googleusercontent.com'
+        });
+
+        // Attach the click handler to the sign-in button
+        auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
+    });
+};
+
+/**
+ * Handle successful sign-ins.
+ */
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+ };
+
+/**
+ * Handle sign-in failures.
+ */
+var onFailure = function(error) {
+    console.log(error);
+};
+    }
+  </script>-->
         <!-- header -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-main">
             <div class="hamburger-icon"></div>
@@ -117,6 +164,15 @@
             </section>
         </div>
 
+        <div class="mymodal-left-shadow"></div>
+        <div class="mymodal">
+            
+        </div>
+        <div class="mymodal-right-shadow"></div>
+
+
+
+
          <div class="modal fade {{task.task_id}}" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -148,6 +204,37 @@
             </div>
         </div>
 
+        <!--<div class="g-signin2" style="display: none;"></div>-->
+        <script>
+        /*function onSignIn(googleUser) {
+            alert("You are signed in.");
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }*/
+       /* function checkStat(googleUser) {
+    alert("You are signed in.");
+    //window.location = "index.html";
+    conslole.log("go to main page (from checkStat)");
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId());
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail());
+}*/
+        </script>
+        <!--<a href="#" onclick="signOut();">Sign out</a>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    alert("You are signed out.");
+                });
+            }
+        </script>-->
+
         <!--<div class="row" style="margin: 0; padding: 0">
             <section class="cards-wrapper" style="margin-top: 64px;">
                 <section class="cards">
@@ -178,35 +265,6 @@
         </div>
         <!-- end cards -->
         
-        <span id="signinButton">
-            <span
-                class="g-signin"
-                data-callback="signinCallback"
-                data-clientid="7722569795-dbgf6q09b5t5v4qgqac1t4qbeb6pjk4n.apps.googleusercontent.com"
-                data-cookiepolicy="single_host_origin"
-                data-requestvisibleactions="http://schema.org/AddAction"
-                data-scope="https://www.googleapis.com/auth/userinfo.email">
-            </span>
-        </span>
-
-        <script>
-function signinCallback(authResult) {
-  if (authResult['status']['signed_in']) {
-    // Update the app to reflect a signed in user
-    // Hide the sign-in button now that the user is authorized, for example:
-    
-  } else {
-    // Update the app to reflect a signed out user
-    // Possible error values:
-    //   "user_signed_out" - User is signed-out
-    //   "access_denied" - User denied access to your app
-    //   "immediate_failed" - Could not automatically log in the user
-    console.log('Sign-in state: ' + authResult['error']);
-  }
-}
-        </script>
-
-
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

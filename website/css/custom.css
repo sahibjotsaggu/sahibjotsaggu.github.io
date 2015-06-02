@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background-color: rgba(0,0,0,0);
     z-index: -5;
-    -webkit-transition: background-color 0.3s, left 0.3s, width 0.3s;
+    -webkit-transition: background-color 0.4s, left 0.4s, width 0.4s;
 }
 
 .ps-on {
@@ -234,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: #FFF;
     z-index: 1500;
-    -webkit-transition: left 0.3s;
+    -webkit-transition: left 0.4s;
     overflow-y: scroll;
 }
 
@@ -478,7 +478,49 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
+/* my modal */
+
+.mymodal-left-shadow, .mymodal-right-shadow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.mymodal-right-shadow {
+    left: auto;
+    right: 0px;
+}
+
+.mymodal {
+    position: fixed;
+    top: -100%;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    background: #FFF;
+    z-index: 10000;
+    box-shadow: 0px 0px 25px #333;
+    -webkit-transition: 0.4s;
+}
+
+.mymodal-on {
+    top: 0px;
+}
+
+
+
 /* media queries */
+
+@media (max-width: 992px) {
+    .mymodal {
+        left: 5%;
+        width: 90%;
+    }
+}
 
 @media (max-width: 768px) {
     .navbar-brand span {

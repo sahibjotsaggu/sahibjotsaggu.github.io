@@ -237,6 +237,10 @@ $(document).ready(function() {
         $(".dropdown").css("-webkit-transition", "scale(0)");
     })
 
+    $(".flat-button").click(function() {
+        $(".mymodal").addClass("mymodal-on");
+    });
+
     $(document).keyup(function(e) {
     //if (e.keyCode == 13) $('.save').click();     // enter
         if (e.keyCode == 27) {
