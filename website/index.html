@@ -25,6 +25,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script src="https://apis.google.com/js/client:platform.js" async defer></script>
     </head>
 
     <body id="face" ng-controller="myCtrl">
@@ -176,6 +177,35 @@
             </section>
         </div>
         <!-- end cards -->
+        
+        <span id="signinButton">
+            <span
+                class="g-signin"
+                data-callback="signinCallback"
+                data-clientid="7722569795-dbgf6q09b5t5v4qgqac1t4qbeb6pjk4n.apps.googleusercontent.com"
+                data-cookiepolicy="single_host_origin"
+                data-requestvisibleactions="http://schema.org/AddAction"
+                data-scope="https://www.googleapis.com/auth/userinfo.email">
+            </span>
+        </span>
+
+        <script>
+function signinCallback(authResult) {
+  if (authResult['status']['signed_in']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    
+  } else {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+        </script>
+
 
 
         <!-- Bootstrap core JavaScript
