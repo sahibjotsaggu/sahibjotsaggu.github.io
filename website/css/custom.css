@@ -12,6 +12,14 @@ p {
     padding-top: 5px;
 }
 
+
+/* $(".sidebar").css("left", "0px");
+        $(".page-shadow").css("left", "300px");
+        $(".page-shadow").css("width", "calc(100% - 300px)");
+        $(".page-shadow").css("z-index", "10000");
+        $(".page-shadow").css("background-color", "rgba(0,0,0,0.5)");
+        $("body").css("overflow-y", "hidden");*/
+
 p.bold {
     font-weight: bold;
 }
@@ -34,6 +42,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0,0,0,0);
     z-index: -5;
     -webkit-transition: background-color 0.3s, left 0.3s, width 0.3s;
+}
+
+.ps-on {
+    left: 300px;
+    width: calc(100% - 300px);
+    z-index: 10000;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .navbar {
@@ -222,6 +237,19 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-transition: left 0.3s;
     overflow-y: scroll;
 }
+
+.sb-open {
+    left: 0px;
+}
+
+/* $(".sidebar").css("left", "0px");
+        $(".page-shadow").css("left", "300px");
+        $(".page-shadow").css("width", "calc(100% - 300px)");
+        $(".page-shadow").css("z-index", "10000");
+        $(".page-shadow").css("background-color", "rgba(0,0,0,0.5)");
+        $("body").css("overflow-y", "hidden");*/
+
+
 
 .sidebar-header {
     position: absolute;

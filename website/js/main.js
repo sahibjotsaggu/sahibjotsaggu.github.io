@@ -198,11 +198,15 @@ $(document).ready(function() {
     });
 
     $(".hamburger-icon").click(function() {
-        openSidebar();
+        //openSidebar();
+        $(".sidebar").addClass("sb-open");
+        $(".page-shadow").addClass("ps-on");
     });
 
     $(".page-shadow").click(function() {
-        closeSidebar();
+        //closeSidebar();
+        $(".sidebar").removeClass("sb-open");
+        $(".page-shadow").removeClass("ps-on");
     });
 
     $(".search-icon-right").click(function() {
