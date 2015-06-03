@@ -156,24 +156,51 @@ var onFailure = function(error) {
                             <div class="fab" id="{{words.imgsrc}}"></div>-->
                             <h4>{{task.title}}</h4>
                             <p class="gray">#{{task.task_id}}</p>
-                            <div class="flat-button" data-toggle="modal" data-target="#myModal" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
-                           
+                            <div class="flat-button" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
+                           <!--  data-toggle="modal" data-target="#myModal" -->
                         </div>
                     </div>
                 </section>
             </section>
         </div>
 
-        <div class="mymodal-left-shadow"></div>
+        <div class="mymodal-shadow"></div>
         <div class="mymodal">
-            
+            <!-- modal header -->
+            <nav class="navbar navbar-modal">
+                <div class="navbar-header">
+                    <p class="navbar-brand-modal">{{modal_data.task_title}}</p>
+                </div>
+            </nav>
+
+            <!-- modal content -->
+            <div class="mymodal-content">
+                <div class="row modal-row">
+                    <div class="col-md-6 col-sm-6 task-desc" ng-bind-html="modal_data.task_desc">
+                    </div>
+                    <div class="col-md-6 col-sm-6 task-comments">
+                        <div class="modal-comments" ng-show="modal_data.has_comments">
+                            <h5 class="gray" style="padding-bottom: 10px; padding-top: 0px">All Comments</h5>
+                            <ul class="comments_list">
+                                <li ng-repeat="comment in modal_data.comment_info.Entries">
+                                    <div class="comment-pic" style="{{comment.UserPhotoPath}}"></div>
+                                    <div class="comment-info">
+                                        <div class="comment-creator">{{comment.UserName}}</div>
+                                        <div class="comment-time gray">{{comment.Created}}</div>
+                                        <div class="comment-txt" ng-bind-html="comment.Comment"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mymodal-right-shadow"></div>
 
 
 
 
-         <div class="modal fade {{task.task_id}}" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <!--<div class="modal fade {{task.task_id}}" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -199,10 +226,10 @@ var onFailure = function(error) {
                     <div class="flat-button" data-dismiss="modal">Close<span class="underline"></span></div>
                         <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Save changes</button>-->
-                    </div>
+                    <!--</div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <!--<div class="g-signin2" style="display: none;"></div>-->
         <script>

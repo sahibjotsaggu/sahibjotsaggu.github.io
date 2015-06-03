@@ -145,7 +145,7 @@
         .success(function(user) {
             var user_id = user.Entries[0].UserID;
             // with the user's id, getting the user's open tickets 
-            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + user_id + "&TicketStatusIsOpen=true&MaxRecords=100")
+            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + 5164 + "&TicketStatusIsOpen=true&MaxRecords=100")
             .success(function(data) {
                 $scope.all_tasks = [];
                 for (var x = 0; x < data.NumEntries; x++) {
@@ -155,11 +155,13 @@
                         temp_info["title"] = temp_info["title"].substring(0, 57) + "...";
                     }
                     temp_info["task_id"] = data.Entries[x].TicketID;
-                    temp_info["desc"] = data.Entries[x].Description;
+                    //temp_info["desc"] = data.Entries[x].Description;
                     temp_info["current_user"] = user_id;
                     $scope.all_tasks.push(temp_info);
                 };
                 $scope.showModal = function(id) {
+                    $(".mymodal").addClass("mymodal-on");
+                    $(".mymodal-shadow").addClass("mymodal-shadow-on");
                     $scope.modal_data = {};
                     $http.jsonp("http://genome.klick.com:80/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(comment) {
@@ -237,9 +239,16 @@ $(document).ready(function() {
         $(".dropdown").css("-webkit-transition", "scale(0)");
     })
 
-    $(".flat-button").click(function() {
-        $(".mymodal").addClass("mymodal-on");
+    $(".flat-button").on("click", function(e) {
+         alert();
+
     });
+
+/*    .click(function() {
+        alert();
+        //showMyModal();
+        
+    });*/
 
     $(document).keyup(function(e) {
     //if (e.keyCode == 13) $('.save').click();     // enter
@@ -252,10 +261,15 @@ $(document).ready(function() {
         }
     });
 
+    function showMyModal() {
+        alert();
+        $(".mymodal").addClass("mymodal-on");
+        $(".mymodal-shadow").addClass("mymodal-shadow-on");
+    }
+
     function openSidebar() {
         $(".sidebar").addClass("sb-open");
         $(".page-shadow").addClass("ps-on");
-        $(".mymodal").addClass("mymodal-on");
     }
 
     function closeSidebar() {
