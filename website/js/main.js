@@ -147,7 +147,7 @@
             $scope.current_user_name = user.Entries[0].FirstName + " " + user.Entries[0].LastName;
            
             // with the user's id, getting the user's open tickets 
-            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + 5456 + "&TicketStatusIsOpen=true&MaxRecords=100")
+            $http.jsonp("https://intranet-staging.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + user_id + "&TicketStatusIsOpen=true&MaxRecords=100")
             .success(function(data) {
                 $scope.all_tasks = [];
                 for (var x = 0; x < data.NumEntries; x++) {
@@ -165,7 +165,7 @@
                     $(".mymodal-shadow").addClass("mymodal-shadow-on");
                     $("body").css("overflow", "hidden");
                     $scope.modal_data = {};
-                    $http.jsonp("http://genome.klick.com:80/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + id)
+                    $http.jsonp("https://intranet-staging.klick.com:443/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(comment) {
                         if (comment.NumEntries == 0) {
                             $scope.modal_data["has_comments"] = false;
@@ -184,7 +184,7 @@
                         }
                         //console.log($scope.modal_data);
                     });
-                    $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&TicketID=" + id)
+                    $http.jsonp("https://intranet-staging.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(user_info) {
                         $scope.modal_data['task_id'] = id;
                         $scope.modal_data['task_desc'] = user_info.Entries[0].Description;
