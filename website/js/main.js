@@ -140,32 +140,14 @@
 (function() {
     var app = angular.module('testing', ['ngSanitize']);
     app.controller('myCtrl', ['$http', '$scope', function($http, $scope) {
-
-        /*$http.jsonp("http://genome.klick.com:443/api/Ticket/Comment?TicketID=857871&Comment=helloworld&format=json&callback=JSON_CALLBACK")
-        .success(function(stuff) {
-            console.log(stuff);
-        });*/
-
-        $.ajax({
-            url: "http://genome.klick.com/api/Ticket/Comment.json",
-            type: "POST",
-            data: {TicketID: 857871, Comment: "helloworld"},
-            xhrFields: {
-                withCredentials: true
-            }
-        })
-        .done(function(stuff) {
-            console.log(stuff);
-        });
-      
       // api call to get current user's id
-        $http.jsonp("https://genome.klick.com:443/api/User/Current?callback=JSON_CALLBACK")
+        $http.jsonp("https://intranet-staging.klick.com:443/api/User/Current?callback=JSON_CALLBACK")
         .success(function(user) {
             var user_id = user.Entries[0].UserID;
             $scope.current_user_name = user.Entries[0].FirstName + " " + user.Entries[0].LastName;
            
             // with the user's id, getting the user's open tickets 
-            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + user_id + "&TicketStatusIsOpen=true&MaxRecords=100")
+            $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&AssignedToUserID=" + 5456 + "&TicketStatusIsOpen=true&MaxRecords=100")
             .success(function(data) {
                 $scope.all_tasks = [];
                 for (var x = 0; x < data.NumEntries; x++) {
@@ -182,7 +164,6 @@
                     $(".mymodal").addClass("mymodal-on");
                     $(".mymodal-shadow").addClass("mymodal-shadow-on");
                     $("body").css("overflow", "hidden");
-
                     $scope.modal_data = {};
                     $http.jsonp("http://genome.klick.com:80/api/Ticket/Comment?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(comment) {
@@ -205,8 +186,26 @@
                     });
                     $http.jsonp("https://genome.klick.com:443/api/Ticket/Filter?callback=JSON_CALLBACK&TicketID=" + id)
                     .success(function(user_info) {
+                        $scope.modal_data['task_id'] = id;
                         $scope.modal_data['task_desc'] = user_info.Entries[0].Description;
                         $scope.modal_data['task_title'] = user_info.Entries[0].Title;
+                    });
+                };
+                $scope.addComment = function(taskid) {
+                    var user_comment = $('.user-add-comment-tarea').val().replace(/\n/g, "<br />");
+                    // do comment processing here and send back error if necessary
+                    //...
+                    // sending a post request to the genome API to post the comment
+                    $.ajax({
+                        url: "https://intranet-staging.klick.com/api/Ticket/Comment.json",
+                        type: "POST",
+                        data: {TicketID: parseInt(taskid), Comment: user_comment},
+                        xhrFields: {
+                            withCredentials: true
+                        }
+                    })
+                    .done(function(stuff) {
+                        console.log(stuff);
                     });
                 };
             });
@@ -250,7 +249,7 @@ $(document).ready(function() {
     $(".back-icon").click(function() {
         $(this).css("display", "none");
         $(".clear-icon-right").css("display", "none");
-        $(".navbar").css("background", "#FF9800");
+        $(".navbar").css("background", "#F44336");
         $(".input-group").css("left", "-7000px");
         $(".back-icon").css("display", "none");
         $(".search-icon-right").css("display", "block");
@@ -266,6 +265,10 @@ $(document).ready(function() {
         $("body").css("overflow-y", "auto");
     });
 
+    $(".user-add-comment-tarea").keypress(function() {
+        $(".comment-send-button").css("background-position", "0px -237px");
+    });
+
 /*    .click(function() {
         alert();
         //showMyModal();
@@ -276,7 +279,7 @@ $(document).ready(function() {
     //if (e.keyCode == 13) $('.save').click();     // enter
         if (e.keyCode == 27) {
             $(".clear-icon-right").css("display", "none");
-            $(".navbar").css("background", "#FF9800");
+            $(".navbar").css("background", "#F44336");
             $(".input-group").css("left", "-7000px");
             $(".back-icon").css("display", "none");
             $(".search-icon-right").css("display", "block");

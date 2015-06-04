@@ -58,13 +58,13 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-main {
     /*pa2dding-top: 7px;
     padding-bottom: 7px;*/
-    background: #FF9800;
+    background: #F44336;
     border: none;
     box-shadow: 0px 0px 5px #000;
 }
 
 .navbar-modal {
-    background: #FF9800;
+    background: #F44336;
     border: none;
     border-radius: 2px 2px 0px 0px;
     height: 64px;
@@ -401,7 +401,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
     height: auto;
     padding: 10px 3px 10px 3px;
-    color: #FF9800;
+    color: #F44336;
     text-transform: uppercase;
     margin-left: 15px;
     cursor: pointer;
@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     width: 0;
     height: 2px;
-    background: #FF9800;
+    background: #F44336;
     -webkit-transition: width 0.1s;
     -moz-transition: width 0.1s;
     -o-transition: width 0.1s;
@@ -517,7 +517,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 90%;
     background: #FFF;
     z-index: 10000;
-    box-shadow: 0px -5px 20px #444, 0px 5px 20px #444;
+    box-shadow: -2px 5px 20px #444;
     border-radius: 2px;
     -webkit-transition: 0.4s;
 }
@@ -560,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0px;
     width: 64px;
     height: 64px;
-    background: #FF9800 url("../images/ic_close_black_18dp.png") no-repeat center center;
+    background: #F44336 url("../images/ic_close_black_18dp.png") no-repeat center center;
     background-size: 50%;
     cursor: pointer;
 }

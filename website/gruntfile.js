@@ -18,44 +18,17 @@ module.exports = function(grunt) {
 
     connect: {
       options: {
-        port:9000,
-        hostname: 'shit.klick.com'
+        port:80,
+        hostname: 'intranet-test.klick.com'
       },
       livereload: {
         options: {
-          // middleware: function (connect) {
-          //   return [
-          //     lrSnippet,
-          //     mountFolder(connect, './')
-          //   ];
-          // }
-
-          // middleware: function (connect, options, middlewares) {
-          //   // inject a custom middleware 
-          //   middlewares.unshift(
-
-          //   connect().use(function(req, res, next) {
-          //     res.setHeader('Access-Control-Allow-Origin', '*');
-          //     res.setHeader('Access-Control-Allow-Methods', '*');
-          //     //a console.log('foo') here is helpful to see if it runs
-          //     return next();
-          //   })
-
-          //   );
-
-          //   return middlewares;
-          // }
-
-          // middleware: function (connect) {
-          //   var middlewares = [
-          //     //Enable CORS
-          //     connect().use(function (req, res, next) {
-          //       res.setHeader('Access-Control-Allow-Origin', '*');
-          //       next();
-          //     })
-          //   ];
-          //   return middlewares;
-          // }
+          middleware: function (connect) {
+            return [
+              lrSnippet,
+              mountFolder(connect, './')
+            ];
+          }
           
 
         }
@@ -72,12 +45,12 @@ module.exports = function(grunt) {
           './css/**/*.css'
         ]
     },
-
+ 
 
     //Open default browser at the app
     open: {
       server: {
-        path: 'http://shit.klick.com:<%= connect.options.port %>'
+        path: 'http://intranet-test.klick.com:<%= connect.options.port %>'
       }
     },
     //setup watch tasks
@@ -93,7 +66,7 @@ module.exports = function(grunt) {
       },
       livereload:{
         options: {
-          livereload:LIVERELOAD_PORT 
+          livereload: true, 
         },
         files:[
           './js/**/*.js',
