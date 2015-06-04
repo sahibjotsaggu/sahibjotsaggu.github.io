@@ -82,7 +82,7 @@ var onFailure = function(error) {
             <div class="back-icon"><img class="med" src="images/ic_keyboard_backspace_grey600_18dp.png" /></div>
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    <span>Genome Task Manager</span>
+                    <span>Genome Task Managser for {{current_user_name}}</span>
                 </a>
             </div>
 
@@ -125,7 +125,7 @@ var onFailure = function(error) {
             <div class="sidebar-banner">
                 <div class="sidebar-profile"></div>
                 <div class="sidebar-user-info">
-                    <p class="bold">Sahibjot Saggu</p>
+                    <p class="bold">{{current_user_name}}</p>
                     <p>ssaggu@klick.com</p>
                 </div>
             </div>
@@ -170,17 +170,20 @@ var onFailure = function(error) {
             <nav class="navbar navbar-modal">
                 <div class="navbar-header">
                     <p class="navbar-brand-modal">{{modal_data.task_title}}</p>
+                    <div class="close-modal"></div>
                 </div>
             </nav>
 
             <!-- modal content -->
             <div class="mymodal-content">
                 <div class="row modal-row">
-                    <div class="col-md-6 col-sm-6 task-desc" ng-bind-html="modal_data.task_desc">
+                    <div class="col-md-6 col-sm-6 task-desc">
+                        <h5 class="gray" style="padding-bottom: 10px; padding-left: 0px; font-size: 18px; padding-top: 0px">Description</h5>
+                        <div ng-bind-html="modal_data.task_desc"></div>
                     </div>
                     <div class="col-md-6 col-sm-6 task-comments">
                         <div class="modal-comments" ng-show="modal_data.has_comments">
-                            <h5 class="gray" style="padding-bottom: 10px; padding-top: 0px">All Comments</h5>
+                            <h5 class="gray" style="padding-bottom: 10px; padding-left: 5px; font-size: 18px; padding-top: 5px">All Comments</h5>
                             <ul class="comments_list">
                                 <li ng-repeat="comment in modal_data.comment_info.Entries">
                                     <div class="comment-pic" style="{{comment.UserPhotoPath}}"></div>
@@ -192,8 +195,16 @@ var onFailure = function(error) {
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
+
+            </div>
+            <div class="modal-addComment" ng-show="modal_data.has_comments">
+                <div class="comment-text">
+                    <textarea placeholder="Type a comment..."></textarea>
+                </div>
+                <div class="comment-send-button"></div>
             </div>
         </div>
 

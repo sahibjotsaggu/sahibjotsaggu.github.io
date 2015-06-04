@@ -18,24 +18,46 @@ module.exports = function(grunt) {
 
     connect: {
       options: {
-        port:9000
-        
-      },
-      server: {
-        options: {
-          port:9000,
-          // change this to '0.0.0.0' to access the server from outside
-          hostname: 'localhost'
-        }
+        port:9000,
+        hostname: 'shit.klick.com'
       },
       livereload: {
         options: {
-          middleware: function (connect) {
-            return [
-              lrSnippet,
-              mountFolder(connect, './')
-            ];
-          }
+          // middleware: function (connect) {
+          //   return [
+          //     lrSnippet,
+          //     mountFolder(connect, './')
+          //   ];
+          // }
+
+          // middleware: function (connect, options, middlewares) {
+          //   // inject a custom middleware 
+          //   middlewares.unshift(
+
+          //   connect().use(function(req, res, next) {
+          //     res.setHeader('Access-Control-Allow-Origin', '*');
+          //     res.setHeader('Access-Control-Allow-Methods', '*');
+          //     //a console.log('foo') here is helpful to see if it runs
+          //     return next();
+          //   })
+
+          //   );
+
+          //   return middlewares;
+          // }
+
+          // middleware: function (connect) {
+          //   var middlewares = [
+          //     //Enable CORS
+          //     connect().use(function (req, res, next) {
+          //       res.setHeader('Access-Control-Allow-Origin', '*');
+          //       next();
+          //     })
+          //   ];
+          //   return middlewares;
+          // }
+          
+
         }
       }
     },
@@ -55,7 +77,7 @@ module.exports = function(grunt) {
     //Open default browser at the app
     open: {
       server: {
-        path: 'http://localhost:<%= connect.options.port %>'
+        path: 'http://shit.klick.com:<%= connect.options.port %>'
       }
     },
     //setup watch tasks

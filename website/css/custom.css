@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-main {
     /*pa2dding-top: 7px;
     padding-bottom: 7px;*/
-    background: #3F51B5;
     background: #FF9800;
     border: none;
     box-shadow: 0px 0px 5px #000;
@@ -67,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-modal {
     background: #FF9800;
     border: none;
-    border-radius: 0px;
+    border-radius: 2px 2px 0px 0px;
     height: 64px;
 }
 
@@ -402,7 +401,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
     height: auto;
     padding: 10px 3px 10px 3px;
-    color: #4841b7;
+    color: #FF9800;
     text-transform: uppercase;
     margin-left: 15px;
     cursor: pointer;
@@ -414,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     width: 0;
     height: 2px;
-    background: #3F51B5;
+    background: #FF9800;
     -webkit-transition: width 0.1s;
     -moz-transition: width 0.1s;
     -o-transition: width 0.1s;
@@ -495,7 +494,7 @@ h1, h2, h3, h4, h5, h6 {
 /* my modal */
 
 .mymodal-shadow {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -518,7 +517,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 90%;
     background: #FFF;
     z-index: 10000;
-    box-shadow: 0px -5px 25px #333, 0px 5px 25px #333;
+    box-shadow: 0px -5px 20px #444, 0px 5px 20px #444;
     border-radius: 2px;
     -webkit-transition: 0.4s;
 }
@@ -532,7 +531,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 64px;
     left: 0px;
     width: 100%;
-    height: calc(100% - 64px);
+    height: calc(100% - 128px);
     overflow-y: scroll;
 }
 
@@ -542,8 +541,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .task-desc {
-    padding: 10px;
-
+    padding: 15px;
+    
 }
 
 .task-comments {
@@ -552,8 +551,81 @@ h1, h2, h3, h4, h5, h6 {
 
 .task-desc.task-comments {
     margin-top: 20px;
+    line-height: 20px;
 }
 
+.close-modal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 64px;
+    height: 64px;
+    background: #FF9800 url("../images/ic_close_black_18dp.png") no-repeat center center;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+/* modal add commnets */
+.modal-addComment {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 64px;
+    background: white;
+    border-top: 1px solid #CCC;
+}
+
+.comment-send-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 64px;
+    height: 63px;
+    background: red url("../images/send-attach-sprite.png") no-repeat;
+    background-position: 0px -4px;
+    /*background-size: 75%;*/
+    cursor: pointer;
+
+    -webkit-transition: background-position 0.2s;
+}
+
+.comment-send-button:hover {
+    background-position: 0px -237px;
+}
+
+.comment-text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 64px);
+    height: 100%;
+}
+
+.comment-text textarea {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    resize: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #FFF;
+}
+
+.comment-text .underline {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #3F51B5;
+    -webkit-transition: width 0.1s;
+    -moz-transition: width 0.1s;
+    -o-transition: width 0.1s;
+    transition: width 0.1s;
+}
 
 /* media queries */
 
@@ -576,6 +648,21 @@ h1, h2, h3, h4, h5, h6 {
     .hamburger-icon {
         display: block;
     }
+
+    .modal-addComment {
+        height: 48px;
+    }
+
+    .comment-send-button {
+        width: 48px;
+        height: 47px;
+        background-position: -8px -11px;
+    }
+
+    .comment-send-button:hover {
+        background-position: -8px -244px;
+    }
+
     /*.mat-card {
         height: 150px;
     }*/
