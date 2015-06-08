@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="testing">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,12 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body id="face" ng-controller="myCtrl">
+    <body id="face" ng-app="TaskManager">
         <!-- header -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-main">
             <div class="hamburger-icon"></div>
             <div class="back-icon"><img class="med" src="images/ic_keyboard_backspace_grey600_18dp.png" /></div>
-            <div class="navbar-header">
+            <div class="navbar-header" ng-controller="HeaderCtrl">
                 <a class="navbar-brand" href="#">
                     <span>Genome Task Manager for {{current_user_name}}</span>
                 </a>
@@ -64,7 +64,7 @@
         <!-- end page shadow -->
 
         <!-- sidebar -->
-        <section class="sidebar" id="sidebar">
+        <section class="sidebar" id="sidebar" ng-controller="SidebarCtrl">
             <!--<nav class="navbar navbar-default navbar-fixed-top navbar-main sidebar-header">
                 <div class="genome-icon"></div>
                 <div class="navbar-header">
@@ -82,7 +82,7 @@
             </div>
             <div class="sidebar-content">
                 <ul>
-                    <li><a href="#"><span class="glyphicon glyphicon-star"></span>Notifications<span class="sidebar-counter">0</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span>Notifications<span class="sidebar-counter">{{notif_num}}</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-tasks"></span>Tasks</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Calendar</a></li>
                 </ul>
@@ -95,8 +95,10 @@
         </section>
         <!-- end sidebar -->
 
+        <div ng-view></div>
+
         <!-- cards -->
-        <div class="row" style="margin: 0; padding: 0;">
+        <!--<div class="row" style="margin: 0; padding: 0;" ng-controller="TaskListCtrl">
             <section class="cards-wrapper" style="margin-top: 64px;">
                 <section class="cards" ng-repeat="task in all_tasks">
                     <div class="col-md-4 col-sm-6" style="padding-top: 1px;">
@@ -105,34 +107,34 @@
                                 <img src="{{words.imgsrc}}" />
                             </div>
                             <div class="fab" id="{{words.imgsrc}}"></div>-->
-                            <h4>{{task.title}}</h4>
+                           <!-- <h4>{{task.title}}</h4>
                             <p class="gray">#{{task.task_id}}</p>
-                            <div class="flat-button" ng-click="showModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
+                            <div class="flat-button" ng-click="showMyModal(task.task_id)" id="{{task.task_id}}">More Info<span class="underline"></span></div>
                            <!--  data-toggle="modal" data-target="#myModal" -->
-                        </div>
+                       <!-- </div>
                     </div>
                 </section>
             </section>
-        </div>
+        </div>-->
 
-        <div class="mymodal-shadow"></div>
-        <div class="mymodal">
+        <!--<div class="mymodal-shadow"></div>
+        <div class="mymodal" ng-controller="TaskCtrl">
             <!-- modal header -->
-            <nav class="navbar navbar-modal">
+            <!--<nav class="navbar navbar-modal">
                 <div class="navbar-header">
-                    <p class="navbar-brand-modal">{{modal_data.task_title}}</p>
+                    <p class="navbar-brand-modal" ng-model="modal_data.task_title"></p>
                     <div class="close-modal"></div>
                 </div>
             </nav>
 
             <!-- modal content -->
-            <div class="mymodal-content">
+            <!--<div class="mymodal-content">
                 <div class="row modal-row">
                     <div class="col-md-6 col-sm-6 task-desc">
                         <h5 class="gray" style="padding-bottom: 10px; padding-left: 0px; font-size: 18px; padding-top: 0px">Description</h5>
                         <div ng-bind-html="modal_data.task_desc"></div>
                     </div>
-                    <div class="col-md-6 col-sm-6 task-comments">
+                    <div class="col-md-6 col-sm-6 task-comments" ng-controller="CommentCtrl">
                         <div class="modal-comments" ng-show="modal_data.has_comments">
                             <h5 class="gray" style="padding-bottom: 10px; padding-left: 5px; font-size: 18px; padding-top: 5px">All Comments</h5>
                             <ul class="comments_list">
@@ -149,14 +151,13 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-addComment">
+            <div class="modal-addComment" ng-controller="AddCommentCtrl">
                 <div class="comment-text">
                     <textarea class="user-add-comment-tarea" placeholder="Type a comment..."></textarea>
                 </div>
                 <div class="comment-send-button" ng-click="addComment(modal_data.task_id)"></div>
             </div>
         </div>
-        
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
@@ -168,8 +169,26 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/angular-sanitize.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
         <script src="js/moment.min.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        
         <script src="js/main.js"></script>
+        <script src="js/jquery_main.js"></script>
+        
+        <script src="js/factories/GenomeAPI.js"></script>
+        
+        <!--<script src="js/services/SharedProperties.js"></script>
+        <script src="js/services/TaskModal.js"></script>
+        <scirpt src="js/services/TaskInfo.js"></scirpt>-->
+        
+        <script src="js/controllers/HeaderCtrl.js"></script>
+        <script src="js/controllers/TaskListCtrl.js"></script>
+        <script src="js/controllers/TaskModalCtrl.js"></script>
+        <script src="js/controllers/CommentCtrl.js"></script>
+        <script src="js/controllers/AddCommentCtrl.js"></script>
+        <script src="js/controllers/SidebarCtrl.js"></script>
+        
         <!--<script data-main="js/common" src="js/require.js"></script>-->
 
     </body>

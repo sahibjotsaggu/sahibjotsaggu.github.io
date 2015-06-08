@@ -16,6 +16,10 @@ module.exports = function(grunt) {
       }
     },
 
+    jshint: {
+      all: ['gruntfile.js', 'js/main.js', 'js/controllers/*.js', 'js/services/*.js', 'js/factories/*.js']
+    },
+
     connect: {
       options: {
         port:80,
@@ -80,6 +84,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.registerTask('default', ['watch']);
@@ -93,6 +98,7 @@ module.exports = function(grunt) {
 
       'connect:livereload',
       'open',
+      'jshint',
       'watch'
     ]);
   });

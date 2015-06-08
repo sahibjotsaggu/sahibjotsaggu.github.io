@@ -1,0 +1,18 @@
+<div class="row" style="margin: 0; padding: 0;" ng-controller="TaskListCtrl">
+    <section class="cards-wrapper" style="margin-top: 64px;">
+        <section class="cards" ng-repeat="task in all_tasks">
+            <div class="col-md-4 col-sm-6" style="padding-top: 1px;">
+                <div class="mat-card">
+                    <!--<div class="mat-image">
+                        <img src="{{words.imgsrc}}" />
+                    </div>
+                    <div class="fab" id="{{words.imgsrc}}"></div>-->
+                    <h4>{{task.title}}</h4>
+                    <p class="gray">#{{task.task_id}}</p>
+                    <a class="flat-button" href="#/task/{{task.task_id}}" id="{{task.task_id}}">More Info<span class="underline"></span></a>
+                   <!--  data-toggle="modal" data-target="#myModal" -->
+                </div>
+            </div>
+        </section>
+    </section>
+</div>

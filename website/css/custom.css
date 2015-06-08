@@ -12,6 +12,9 @@ p {
     padding-top: 5px;
 }
 
+a:hover {
+    text-decoration: none;
+}
 
 /* $(".sidebar").css("left", "0px");
         $(".page-shadow").css("left", "300px");
@@ -420,13 +423,17 @@ h1, h2, h3, h4, h5, h6 {
     transition: width 0.1s;
 }
 
+.flat-button:hover {
+    color: #F44336;
+}
+
 .flat-button:hover .underline {
     width: 100%;
 }
 
 
 /* Modal */
-
+/*
 .modal-content {
     border-radius: 3px;
 }
@@ -442,10 +449,11 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     max-height: 300px;
 }
-
+*/
 .modal-comments {
     width: 100%;
     height: auto;
+    font-size: 14px;
 }
 
 .modal-comments ul {
@@ -468,8 +476,8 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     margin-top: 5px;
     margin-left: 5px;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 100%;
     float: left;
 }
@@ -482,17 +490,162 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     margin-top: 5px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #EEE;
+    /*border-bottom: 1px solid #EEE;*/
 }
-
+/*
 .modal-footer {
     height: 60px;
     padding: 0px;
     border: none;
 }
-
+*/
 /* my modal */
 
+.modal-bar {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 10%;
+    background: #FFF;
+    height: auto;
+    box-shadow: -1px 2px 6px #a5a5a5;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid #EEE;
+}
+
+.modal-header {
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 35px;
+    border: none;
+    padding: 30px;
+}
+
+
+.modal-body, .modal-comments {
+    padding: 30px;
+}
+
+.modal-body {
+    padding-top: 0;
+}
+
+
+.modal-desc {
+    font-size: 15px;
+}
+
+.modal-comments {
+    box-shadow: -1px 2px 6px #a5a5a5;
+    
+}
+
+
+/* Global FAB */
+
+.fab, .main-fab {
+    position: absolute;
+    top: 290px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: #EE4E25;
+    text-align: center;
+    line-height: 55px;
+    color: #FFF;
+    font-size: 20px;
+    box-shadow: 0px 5px 10px #969696;
+    cursor: pointer;
+    -webkit-transition: box-shadow 0.3s;
+}
+/*
+.fab:before, .main-fab:before {
+    content: "+";
+}*/
+
+.main-fab {
+    position: fixed;
+    top: auto;
+    bottom: 30px!important;
+    right: 30px;
+    z-index: 1000;
+}
+
+.main-fab span {
+    position: absolute;
+    top: 36px;
+    right: 65px;
+    width: 105px;
+    height: 15px;
+    background: #424242;
+    font-size: 12px;
+    line-height: 0px;
+    padding: 12px;
+    border-radius: 3px;
+    z-index: 1;
+    pointer-events: none; /* to get rid of hover effect on span tag */
+    opacity: 0;
+    box-shadow: 0px 2px 5px #969696;
+    -webkit-transition: 0.3s;
+}
+
+.main-fab .plus {
+    -webkit-transition: all 0.2s, opacity 0.4s;
+}
+
+.main-fab .pencil {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: transparent url("../images/ic_create_black_36dp.png") no-repeat center center;
+    background-size: 50%;
+    opacity: 0;
+    -webkit-transform: rotate(-145deg);
+    -webkit-transition: all 0.2s, opacity 0.4s;
+}
+
+.fab:hover, .main-fab:hover {
+    box-shadow: 0px 11px 10px #969696;
+}
+
+.main-fab:hover span {
+    top: 18px;
+    opacity: 1;
+
+}
+
+.main-fab:active {
+    box-shadow: 0px 13px 10px #969696;
+}
+
+.main-fab:hover .plus {
+    -webkit-transform: rotate(145deg);
+    opacity: 0;
+}
+
+.main-fab:hover .pencil {
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .mymodal-shadow {
     position: fixed;
     top: 0px;
@@ -510,7 +663,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mymodal {
-    position: fixed;
+    position: absolute;
     top: -105%;
     left: 20%;
     width: 60%;
@@ -563,10 +716,10 @@ h1, h2, h3, h4, h5, h6 {
     background: #F44336 url("../images/ic_close_black_18dp.png") no-repeat center center;
     background-size: 50%;
     cursor: pointer;
-}
+}*/
 
 /* modal add commnets */
-.modal-addComment {
+/*.modal-addComment {
     position: absolute;
     bottom: 0%;
     left: 0%;
@@ -585,7 +738,7 @@ h1, h2, h3, h4, h5, h6 {
     background: red url("../images/send-attach-sprite.png") no-repeat;
     background-position: 0px -4px;
     /*background-size: 75%;*/
-    cursor: pointer;
+   /* cursor: pointer;
 
     -webkit-transition: background-position 0.2s;
 }
@@ -661,6 +814,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .comment-send-button:hover {
         background-position: -8px -244px;
+    }
+
+    .modal-bar {
+        margin: 0;
+        width: 100%;
+    }
+
+    .comment-txt {
+        width: calc(100% - 45px);
     }
 
     /*.mat-card {
