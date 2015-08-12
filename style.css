@@ -104,9 +104,10 @@ p {
 	left: 0%;
 	width: 110%;
 	height: 100%;
-	font-family: Raleway;
+	font-family: Europa;
 	text-transform: uppercase;
 	font-size: 85px;
+	font-weight: bold;
 	text-align: center;
 	line-height: 160px;
 	color: #FFF;
@@ -138,7 +139,7 @@ p {
 	left: calc(55% - 400px);
 	width: 800px;
 	height: 50px;
-	font-family: Raleway;
+	font-family: Europa;
 	font-size: 40px;
 	line-height: 50px;
 	color: #FFF;
@@ -190,7 +191,7 @@ p {
 	width: 600px;
 	font-size: 23px;
 	line-height: 43px;
-	font-family: Raleway;
+	font-family: Europa;
 	padding-bottom: 30px;
 }
 
