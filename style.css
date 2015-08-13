@@ -22,7 +22,7 @@ h1 {
 }
 
 p {
-	font-family: Raleway, Helvetica, Arial!important;
+	font-family: Europa, Helvetica, Arial!important;
 	font-size: 20px!important;
 	font-weight: 300!important;
 }
@@ -60,7 +60,7 @@ p {
 	text-align: center;
 	line-height: 100px;
 	color: #FFF;
-	font-family: Raleway;
+	font-family: Europa, Helvetica, Arial;
 	text-transform: uppercase;
 	font-weight: 200;
 	font-size: 60px;
@@ -75,7 +75,7 @@ p {
 	text-align: center;
 	line-height: 40px;
 	color: #FFF;
-	font-family: Raleway;
+	font-family: Europa, Helvetica, Arial;
 	font-weight: 200;
 	font-size: 25px;
 }
@@ -248,7 +248,7 @@ footer #myname {
 	width: 100%;
 	height: 100px;
 	text-align: center;
-	font-family: Raleway;
+	font-family: Europa, Helvetica, Arial;
 	font-size: 40px;
 	text-align: center;
 	line-height: 100px;
