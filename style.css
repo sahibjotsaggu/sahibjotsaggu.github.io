@@ -17,7 +17,6 @@ body {
 
 h1 {
 	font-family: Europa!important;
-	font-weight: bold!important;
 	font-size: 70px!important;
 }
 
@@ -107,11 +106,9 @@ p {
 	font-family: Europa;
 	text-transform: uppercase;
 	font-size: 85px;
-	font-weight: bold;
 	text-align: center;
 	line-height: 160px;
 	color: #FFF;
-	font-weight: 200;
 }
 
 .bg_wrapper ul #name #name_actual_text {
@@ -123,7 +120,6 @@ p {
 	height: 150px;
 	line-height: 150px;
 	text-align: center;
-	font-weight: bold;
 }
 
 .bg_wrapper ul #quote_layer, .bg_wrapper ul #who_i_am {
