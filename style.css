@@ -123,6 +123,7 @@ p {
 	height: 150px;
 	line-height: 150px;
 	text-align: center;
+	font-weight: bold;
 }
 
 .bg_wrapper ul #quote_layer, .bg_wrapper ul #who_i_am {
