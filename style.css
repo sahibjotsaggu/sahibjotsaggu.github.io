@@ -243,7 +243,7 @@ p {
 	margin-top: 30px;
 }
 
-input[type='text'], input[type='email'], textarea.form-control, button.btn-default {
+input[type='text'], input[type='email'], textarea.form-control, input.btn-default {
 	border-radius: 0px;
 	border: 1px solid #EEE;
 	padding: 20px;
@@ -252,19 +252,19 @@ input[type='text'], input[type='email'], textarea.form-control, button.btn-defau
 	resize: none;
 }
 
-button.btn-default {
+input.btn-default {
 	width: 100%;
 	color: #222;
 	-webkit-transition: background 0.4s, color 0.4s, border 0.4s;
 }
 
-button.btn-default:hover {
+input.btn-default:hover {
 	background: #107acc;
 	border: 1px solid #107acc;
 	color: #FFF;
 }
 
-button.btn-default:active {
+input.btn-default:active {
 	background: #107acc!important;
 	box-shadow: none!important;
 	outline: none!important;
@@ -282,7 +282,7 @@ footer {
 }
 
 footer p {
-	color: #FFF;
+	color: #CCC;
 	text-align: center;
 	line-height: 100px;
 	font-size: 30px!important;
