@@ -235,25 +235,57 @@ p {
 	background-size: cover;
 }
 
-footer {
-	position: absolute;
-	width: 100%;
-	height: 300px;
-	background: #222;
-	background-size: 100%;
+.contacts h1 {
+	text-align: center;
 }
 
-footer #myname {
-	position: absolute;
-	width: 100%;
-	height: 100px;
-	text-align: center;
+.contact_wrapper {
+	margin-top: 30px;
+}
+
+input[type='text'], input[type='email'], textarea.form-control, button.btn-default {
+	border-radius: 0px;
+	border: 1px solid #EEE;
+	padding: 20px;
+	margin-top: 10px;
 	font-family: Europa, Helvetica, Arial;
-	font-size: 40px;
+	resize: none;
+}
+
+button.btn-default {
+	width: 100%;
+	color: #222;
+	-webkit-transition: background 0.4s, color 0.4s, border 0.4s;
+}
+
+button.btn-default:hover {
+	background: #107acc;
+	border: 1px solid #107acc;
+	color: #FFF;
+}
+
+button.btn-default:active {
+	background: #107acc!important;
+	box-shadow: none!important;
+	outline: none!important;
+	border: none!important;
+	color: #FFF!important;
+}
+
+footer {
+	width: 100%;
+	background: #333;
+	height: 100px;
+	margin-top: 40px;
+	padding: 0px!important;
+	font-family: Europa, Helvetica, Arial;
+}
+
+footer p {
+	color: #FFF;
 	text-align: center;
 	line-height: 100px;
-	color: #FFF;
-	font-weight: 200;
+	font-size: 30px!important;
 }
 
 @media screen and (max-width: 768px) {
