@@ -1,18 +1,1 @@
-$(document).ready(function() {
-    $("#a").attr("name", "sa");
-    /*$("footer").css("top", $(window).height() + $(".tile2_wrapper #greeting").height() + $(".tile2_wrapper #about_me").height() + $(".projects_wrapper").height() + "px");*/
-    $(".tile2_wrapper .projects_wrapper #projects_list div").css("height", $("#projects_list").width()*(9/16));
-	var get_col_width = $(".projects_wrapper .projects_list ul li").width();
-    $(".projects_wrapper .projects_list ul li").css("height", get_col_width);
-    $(".down_arrow").click(function() {
-        $("html, body").animate({
-            scrollTop : $(".tile2_wrapper").offset().top
-        }, "easeOutBounce");
-        return false;
-    });
-    $(window).resize(function() {
-		var get_col_width = $(".projects_wrapper .projects_list ul li").width();
-        $(".projects_wrapper .projects_list ul li").css("height", get_col_width);
-        $(".tile2_wrapper .projects_wrapper #projects_list div").css("height", $("#projects_list").width()*(9/16));
-    })
-});
+$(document).ready(function(){var t="@",e="gmail";$(".tile2_wrapper .projects_wrapper #projects_list div").css("height",$("#projects_list").width()*(9/16));var r=".",i="singh",s=$(".projects_wrapper .projects_list ul li").width();$(".projects_wrapper .projects_list ul li").css("height",s);var p=r;$(".down_arrow").click(function(){return $("html, body").animate({scrollTop:$(".tile2_wrapper").offset().top},"easeOutBounce"),!1});var o="sahibjot",c=document.getElementById("cf"),l="com",a="96";c.setAttribute("action","//formspree.io/"+i+p+o+a+t+e+r+l),$(window).resize(function(){var t=$(".projects_wrapper .projects_list ul li").width();$(".projects_wrapper .projects_list ul li").css("height",t),$(".tile2_wrapper .projects_wrapper #projects_list div").css("height",$("#projects_list").width()*(9/16))})});
