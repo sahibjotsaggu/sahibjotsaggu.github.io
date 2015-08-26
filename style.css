@@ -213,15 +213,22 @@ p {
 	width: 100%;
 	height: 800px;
 	margin-top: 30px;
+	border: 1px solid #EEE;
+}
+
+.tile2_wrapper .projects_wrapper #projects_list div a {
+	float: left;
+	width: 100%;
+	height: 100%;
 }
 
 .tile2_wrapper .projects_wrapper #projects_list div:nth-child(1) {
-	background: url("images/citykit.jpg") no-repeat center center;
+	background: url("images/lanilabs.jpg") no-repeat center center;
 	background-size: cover;
 }
 
 .tile2_wrapper .projects_wrapper #projects_list div:nth-child(2) {
-	background: url("images/wathelp.jpg") no-repeat center center;
+	background: url("images/citykit.jpg") no-repeat center center;
 	background-size: cover;
 }
 
@@ -231,7 +238,7 @@ p {
 }
 
 .tile2_wrapper .projects_wrapper #projects_list div:nth-child(4) {
-	background: url("images/sahibjot.jpg") no-repeat center center;
+	background: url("images/wathelp.jpg") no-repeat center center;
 	background-size: cover;
 }
 
