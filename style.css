@@ -242,7 +242,11 @@ p {
 	background-size: cover;
 }
 
-.contacts h1 {
+.in_dev_cont {
+	margin-top: 40px;
+}
+
+.contacts h1, .in_dev h1 {
 	text-align: center;
 }
 
