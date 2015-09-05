@@ -17,7 +17,24 @@
 		}
 		if ($.urlParam('code') !== undefined) {
 			console.log($.urlParam('code'));
-			$.ajax('https://foursquare.com/oauth2/access_token', {client_id: 'MKQICTVQSVBSMXTUXIMOB2GGVDA2WIJNOJY2XJGBX2G3VD1H', client_secret: 'HFZS2ET2QLKHUL3YRE0T0ANB32PNFSJ2CXAHJZUPNGEATM42', grant_type: 'authorization_code', redirect_uri: 'http://www.sahibjot.me/foursquare/', code: $.urlParam('code') + '#_=_'}).done(function(data) {console.log(data);});
+			var url = 'https://foursquare.com/oauth2/access_token?client_id=MKQICTVQSVBSMXTUXIMOB2GGVDA2WIJNOJY2XJGBX2G3VD1H&client_secret=HFZS2ET2QLKHUL3YRE0T0ANB32PNFSJ2CXAHJZUPNGEATM42&grant_type=authorization_code&redirect_uri=http://www.sahibjot.me/foursquare/&code=' + $.urlParam('code') + '#_=_&callback=?';
+			$.ajax({
+				type: 'GET',
+				url: url,
+				async: false,
+				jsonpCallback: 'jsonCallback',
+				contentType: 'application/json',
+				dataType: 'jsonp',
+				success: function(json) {
+					console.log(json);
+				},
+				error: function(e) {
+					console.log(e.message);
+				}
+			});
+
+
+			//$.ajax('', {client_id: 'MKQICTVQSVBSMXTUXIMOB2GGVDA2WIJNOJY2XJGBX2G3VD1H', client_secret: 'HFZS2ET2QLKHUL3YRE0T0ANB32PNFSJ2CXAHJZUPNGEATM42', grant_type: 'authorization_code', redirect_uri: 'http://www.sahibjot.me/foursquare/', code: $.urlParam('code') + '#_=_'}).done(function(data) {console.log(data);});
 		}
 
 
