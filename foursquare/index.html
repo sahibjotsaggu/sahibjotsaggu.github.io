@@ -16,7 +16,7 @@
 			return results[1] || 0;
 		}
 		function hey_buddy(data) {
-			console.log(data);
+			console.log('buddy');
 		}
 		if ($.urlParam('code') !== undefined) {
 			console.log($.urlParam('code'));
@@ -29,7 +29,7 @@
 				contentType: 'application/json',
 				dataType: 'jsonp',
 				success: function(json) {
-					console.dir(json);
+					console.log('ya');
 				},
 				error: function(e) {
 					console.log(e.message);
