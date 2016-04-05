@@ -96,6 +96,7 @@ p {
 	height: 120%;
 	background: url("images/mainbg.jpg") no-repeat center bottom;
 	background-size: 100%;
+	display: none;
 }
 
 .bg_wrapper ul #name {
