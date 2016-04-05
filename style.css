@@ -145,24 +145,6 @@ p {
 	font-weight: 200;
 }
 
-.down_arrow {
-	position: absolute;
-	bottom: 20px;
-	left: calc(50% - 35px);
-	width: 70px;
-	height: 70px;
-	background: url("images/arrow.png") no-repeat;
-	background-size: cover;
-	cursor: pointer;
-	-webkit-transition: bottom 0.1s;
-	-moz-transition: bottom 0.1s;
-	-transition: bottom 0.1s;
-}
-
-.down_arrow:hover {
-	bottom: 10px;
-}
-
 .tile2_wrapper {
 	position: absolute;
 	top: 100%;
@@ -306,7 +288,7 @@ footer p {
 		font-size: 40px!important;
 	}
 
-	.bg_wrapper ul, .down_arrow {
+	.bg_wrapper ul {
 		display: none;
 	}
 
