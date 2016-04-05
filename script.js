@@ -1,8 +1,9 @@
 $(document).ready(function() {
-	$("#foreground_pic").on("load", setTimeout(function() {
+	/*$("#foreground_pic").on("load", setTimeout(function() {
 		console.log("hey");
 		$("#foreground_pic").css("display", "block");
 	}, 5000));
+	console.log("delayed text");*/
 
 	var t="@",e="gmail";
 	$(".tile2_wrapper .projects_wrapper #projects_list div").css("height",$("#projects_list").width()*(9/16));
