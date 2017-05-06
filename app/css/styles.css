@@ -14,18 +14,15 @@
   font-family: "Karla Bold";
   src: url("../fonts/Karla_Bold.ttf"); }
 
+.grey {
+  color: #BEBEBE; }
+
 body {
   font-family: "Avenir";
   background: #FFF; }
   body a {
     text-decoration: none;
-    color: inherit;
-    padding-bottom: 5px;
-    border-bottom: 1px solid;
-    border-color: transparent;
-    -webkit-transition: border-color 0.2s; }
-    body a:hover {
-      border-color: white; }
+    color: inherit; }
 
 #main_wrapper {
   position: absolute;
@@ -34,7 +31,8 @@ body {
   width: 100%;
   height: auto;
   background: #1A1A1A;
-  color: #FFF; }
+  color: #FFF;
+  box-shadow: 0px 0px 15px #1A1A1A; }
   #main_wrapper .main_heading {
     display: flex;
     flex-direction: column;
@@ -47,6 +45,8 @@ body {
       margin: 0;
       font-size: 90px;
       line-height: 90px; }
+    #main_wrapper .main_heading p {
+      font-size: 25px; }
   #main_wrapper .main_left_corner, #main_wrapper .main_right_corner {
     position: absolute;
     bottom: 50px;
@@ -60,7 +60,7 @@ body {
       font-size: 14px;
       text-transform: uppercase;
       font-weight: bold;
-      letter-spacing: 0.14em; }
+      letter-spacing: 0.13em; }
     #main_wrapper .main_left_corner .subtitle, #main_wrapper .main_right_corner .subtitle {
       width: 100px;
       float: left;
@@ -90,16 +90,17 @@ body {
     position: relative;
     top: 0;
     padding: 50px;
-    min-width: 300px;
-    max-width: 300px;
+    width: auto;
     height: 100%;
-    border-right: 1px solid #D6D6D6; }
+    /*box-shadow: 0px 5px 20px #D6D6D6;*/
+    border-right: 3px solid #EEE; }
     #content_wrapper aside h2 {
       font-size: 14px;
       text-transform: uppercase;
       font-family: "Karla Bold";
       font-weight: bold; }
     #content_wrapper aside ul {
+      width: 213px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -107,7 +108,8 @@ body {
       #content_wrapper aside ul li {
         margin-top: 50px;
         font-size: 18px;
-        color: #D6D6D6; }
+        color: #BEBEBE;
+        cursor: pointer; }
         #content_wrapper aside ul li.active {
           position: relative;
           font-size: 30px;
@@ -117,21 +119,81 @@ body {
             top: 35px;
             left: 0;
             content: attr(data-menuSubtitle);
-            font-size: 20px;
+            font-size: 16px;
             font-family: "Avenir"; }
   #content_wrapper main {
     width: 100%; }
     #content_wrapper main .content_slide {
       display: flex;
-      flex-direction: column; }
-      #content_wrapper main .content_slide.first_slide {
-        align-items: center;
-        justify-content: center; }
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
       #content_wrapper main .content_slide .large_desc {
         font-size: 30px;
         max-width: 60%;
-        line-height: 1.37em; }
+        line-height: 1.37em;
+        color: #BEBEBE; }
         #content_wrapper main .content_slide .large_desc .first_words {
-          font-family: "Avenir Bold"; }
-        #content_wrapper main .content_slide .large_desc .grey {
-          color: #BEBEBE; }
+          font-family: "Avenir Bold";
+          color: #1A1A1A; }
+      #content_wrapper main .content_slide .exp_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /*.employer_list {
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+
+					li {
+						display: flex;
+						flex-direction: row;
+						padding: 10px;
+						box-shadow: 0px 0px 5px $grey;
+						border-radius: 2px;
+						margin-top: 10px;
+
+						img {
+							max-height: 90px;
+						}
+
+						.employer_info {
+							width: 100%;
+
+							p {
+								margin: 0 10px;
+							}
+
+							.employer_name {
+								font-family: "Avenir Bold";
+								font-size: 17px;
+							}
+
+							.employer_desc {
+								margin: 10px;
+								color: $black;
+								font-size: $smallFont;
+							}
+						}
+					}
+				}*/ }
+        #content_wrapper main .content_slide .exp_wrapper .exp_row {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row; }
+          #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc {
+              width: auto;
+              max-width: none;
+              line-height: 1em; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc .grey {
+                font-size: 25px; }

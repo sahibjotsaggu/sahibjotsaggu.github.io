@@ -2,6 +2,11 @@
 
 $smallFont: 14px;
 $black: #1A1A1A;
+$grey: #BEBEBE;
+
+.grey {
+	color: $grey;
+}
 
 body {
 	font-family: "Avenir";
@@ -10,14 +15,6 @@ body {
 	a {
 		text-decoration: none;
 		color: inherit;
-		padding-bottom: 5px;
-		border-bottom: 1px solid;
-		border-color: transparent;
-		-webkit-transition: border-color 0.2s;
-
-		&:hover {
-			border-color: white;
-		}
 	}
 
 }
@@ -30,6 +27,7 @@ body {
 	height: auto;
 	background: $black;
 	color: #FFF;
+	box-shadow: 0px 0px 15px $black;
 
 	$headingHeight: 90px;
 	.main_heading {
@@ -45,6 +43,10 @@ body {
 			margin: 0;
 			font-size: $headingHeight;
 			line-height: $headingHeight;
+		}
+
+		p {
+			font-size: 25px;
 		}
 	}
 
@@ -64,7 +66,7 @@ body {
 			font-size: $smallFont;
 			text-transform: uppercase;
 			font-weight: bold;
-			letter-spacing: 0.14em;
+			letter-spacing: 0.13em;
 		}
 
 		.subtitle {
@@ -108,10 +110,10 @@ body {
 		position: relative;
 		top: 0;
 		padding: 50px;
-		min-width: 300px;
-		max-width: 300px;
+		width: auto;
 		height: 100%;
-		border-right: 1px solid #D6D6D6;
+		/*box-shadow: 0px 5px 20px #D6D6D6;*/
+		border-right: 3px solid #EEE;
 
 		h2 {
 			font-size: $smallFont;
@@ -121,6 +123,7 @@ body {
 		}
 
 		ul {
+			width: 213px;
 			margin: 0;
 			padding: 0;
 			list-style: none;
@@ -129,7 +132,8 @@ body {
 			li {
 				margin-top: 50px;
 				font-size: 18px;
-				color: #D6D6D6;
+				color: $grey;
+				cursor: pointer;
 
 				&.active {
 					position: relative;
@@ -141,7 +145,7 @@ body {
 						top: 35px;
 						left: 0;
 						content: attr(data-menuSubtitle);
-						font-size: 20px;
+						font-size: 16px;
 						font-family: "Avenir";
 					}
 				}
@@ -152,27 +156,96 @@ body {
 	main {
 		width: 100%;
 
+		$contentWidth: 60%;
 		.content_slide {
 			display: flex;
 			flex-direction: column;
-
-			&.first_slide {
-				align-items: center;
-				justify-content: center;
-			}
+			align-items: center;
+			justify-content: center;
 
 			.large_desc {
 				font-size: 30px;
-				max-width: 60%;
+				max-width: $contentWidth;
 				line-height: 1.37em;
+				color: $grey;
 
 				.first_words {
 					font-family: "Avenir Bold";
+					color: $black;
+				}
+			}
+
+			.exp_wrapper {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+
+				.exp_row {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: row;
+
+					.exp_cell {
+						width: 100%;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+
+						.large_desc {
+							width: auto;
+							max-width: none;
+							line-height: 1em;
+
+							.grey {
+								font-size: 25px;
+							}
+						}
+					}
 				}
 
-				.grey {
-					color: #BEBEBE;
-				}
+				/*.employer_list {
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+
+					li {
+						display: flex;
+						flex-direction: row;
+						padding: 10px;
+						box-shadow: 0px 0px 5px $grey;
+						border-radius: 2px;
+						margin-top: 10px;
+
+						img {
+							max-height: 90px;
+						}
+
+						.employer_info {
+							width: 100%;
+
+							p {
+								margin: 0 10px;
+							}
+
+							.employer_name {
+								font-family: "Avenir Bold";
+								font-size: 17px;
+							}
+
+							.employer_desc {
+								margin: 10px;
+								color: $black;
+								font-size: $smallFont;
+							}
+						}
+					}
+				}*/
+
 			}
 		}
 	}
