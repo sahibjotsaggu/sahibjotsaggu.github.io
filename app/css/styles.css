@@ -1,2 +1,137 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir_Roman.otf"); }
+
+@font-face {
+  font-family: "Avenir Bold";
+  src: url("../fonts/Avenir_Black.otf"); }
+
+@font-face {
+  font-family: "Karla";
+  src: url("../fonts/Karla_Regular.ttf"); }
+
+@font-face {
+  font-family: "Karla Bold";
+  src: url("../fonts/Karla_Bold.ttf"); }
+
 body {
+  font-family: "Avenir";
   background: #FFF; }
+  body a {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    border-color: transparent;
+    -webkit-transition: border-color 0.2s; }
+    body a:hover {
+      border-color: white; }
+
+#main_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #1A1A1A;
+  color: #FFF; }
+  #main_wrapper .main_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+    #main_wrapper .main_heading h1 {
+      margin: 0;
+      font-size: 90px;
+      line-height: 90px; }
+  #main_wrapper .main_left_corner, #main_wrapper .main_right_corner {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-family: "Karla";
+    visibility: visible; }
+    #main_wrapper .main_left_corner p, #main_wrapper .main_right_corner p {
+      margin: 0;
+      line-height: 1em; }
+    #main_wrapper .main_left_corner .subtitle, #main_wrapper .main_left_corner .sub_content, #main_wrapper .main_right_corner .subtitle, #main_wrapper .main_right_corner .sub_content {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.14em; }
+    #main_wrapper .main_left_corner .subtitle, #main_wrapper .main_right_corner .subtitle {
+      width: 100px;
+      float: left;
+      color: #555; }
+    #main_wrapper .main_left_corner .sub_content, #main_wrapper .main_right_corner .sub_content {
+      float: left;
+      margin-left: 25px; }
+  #main_wrapper .main_right_corner {
+    left: auto;
+    right: 50px; }
+    #main_wrapper .main_right_corner .subtitle {
+      width: 50px;
+      text-align: right; }
+    #main_wrapper .main_right_corner .sub_content {
+      margin-left: 0;
+      margin-right: 25px; }
+
+#content_wrapper {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row; }
+  #content_wrapper aside {
+    position: relative;
+    top: 0;
+    padding: 50px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 100%;
+    border-right: 1px solid #D6D6D6; }
+    #content_wrapper aside h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: "Karla Bold";
+      font-weight: bold; }
+    #content_wrapper aside ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: "Avenir Bold"; }
+      #content_wrapper aside ul li {
+        margin-top: 50px;
+        font-size: 18px;
+        color: #D6D6D6; }
+        #content_wrapper aside ul li.active {
+          position: relative;
+          font-size: 30px;
+          color: #1A1A1A; }
+          #content_wrapper aside ul li.active:after {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            content: attr(data-menuSubtitle);
+            font-size: 20px;
+            font-family: "Avenir"; }
+  #content_wrapper main {
+    width: 100%; }
+    #content_wrapper main .content_slide {
+      display: flex;
+      flex-direction: column; }
+      #content_wrapper main .content_slide.first_slide {
+        align-items: center;
+        justify-content: center; }
+      #content_wrapper main .content_slide .large_desc {
+        font-size: 30px;
+        max-width: 60%;
+        line-height: 1.37em; }
+        #content_wrapper main .content_slide .large_desc .first_words {
+          font-family: "Avenir Bold"; }
+        #content_wrapper main .content_slide .large_desc .grey {
+          color: #BEBEBE; }

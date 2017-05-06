@@ -1,3 +1,179 @@
+@import 'fonts';
+
+$smallFont: 14px;
+$black: #1A1A1A;
+
 body {
+	font-family: "Avenir";
 	background: #FFF;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		padding-bottom: 5px;
+		border-bottom: 1px solid;
+		border-color: transparent;
+		-webkit-transition: border-color 0.2s;
+
+		&:hover {
+			border-color: white;
+		}
+	}
+
+}
+
+#main_wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	background: $black;
+	color: #FFF;
+
+	$headingHeight: 90px;
+	.main_heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+
+		h1 {
+			margin: 0;
+			font-size: $headingHeight;
+			line-height: $headingHeight;
+		}
+	}
+
+	.main_left_corner, .main_right_corner {
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
+		font-family: "Karla";
+		visibility: visible;
+
+		p {
+			margin: 0;
+			line-height: 1em;
+		}
+
+		.subtitle, .sub_content {
+			font-size: $smallFont;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.14em;
+		}
+
+		.subtitle {
+			width: 100px;
+			float: left;
+			color: #555;
+		}
+
+		.sub_content {
+			float: left;
+			margin-left: 25px;
+		}
+	}
+
+	.main_right_corner {
+		left: auto;
+		right: 50px;
+
+		.subtitle {
+			width: 50px;
+			text-align: right;
+		}
+
+		.sub_content {
+			margin-left: 0;
+			margin-right: 25px;
+		}
+	}
+}
+
+#content_wrapper {
+	position: absolute;
+	top: auto;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+
+	aside {
+		position: relative;
+		top: 0;
+		padding: 50px;
+		min-width: 300px;
+		max-width: 300px;
+		height: 100%;
+		border-right: 1px solid #D6D6D6;
+
+		h2 {
+			font-size: $smallFont;
+			text-transform: uppercase;
+			font-family: "Karla Bold";
+			font-weight: bold;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: "Avenir Bold";
+
+			li {
+				margin-top: 50px;
+				font-size: 18px;
+				color: #D6D6D6;
+
+				&.active {
+					position: relative;
+					font-size: 30px;
+					color: $black;
+
+					&:after {
+						position:	absolute;
+						top: 35px;
+						left: 0;
+						content: attr(data-menuSubtitle);
+						font-size: 20px;
+						font-family: "Avenir";
+					}
+				}
+			}
+		}
+	}
+
+	main {
+		width: 100%;
+
+		.content_slide {
+			display: flex;
+			flex-direction: column;
+
+			&.first_slide {
+				align-items: center;
+				justify-content: center;
+			}
+
+			.large_desc {
+				font-size: 30px;
+				max-width: 60%;
+				line-height: 1.37em;
+
+				.first_words {
+					font-family: "Avenir Bold";
+				}
+
+				.grey {
+					color: #BEBEBE;
+				}
+			}
+		}
+	}
 }
