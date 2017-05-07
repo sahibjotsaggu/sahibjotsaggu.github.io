@@ -19,20 +19,26 @@
 
 body {
   font-family: "Avenir";
-  background: #FFF; }
+  background: #FFF;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   body a {
     text-decoration: none;
     color: inherit; }
 
 #main_wrapper {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
   background: #1A1A1A;
   color: #FFF;
-  box-shadow: 0px 0px 15px #1A1A1A; }
+  /*box-shadow: 0px 0px 15px $black;*/ }
   #main_wrapper .main_heading {
     display: flex;
     flex-direction: column;
@@ -79,7 +85,7 @@ body {
       margin-right: 25px; }
 
 #content_wrapper {
-  position: absolute;
+  position: relative;
   top: auto;
   left: 0;
   width: 100%;
@@ -87,13 +93,15 @@ body {
   display: flex;
   flex-direction: row; }
   #content_wrapper aside {
-    position: relative;
+    position: absolute;
     top: 0;
     padding: 50px;
-    width: auto;
+    width: 220px;
     height: 100%;
-    /*box-shadow: 0px 5px 20px #D6D6D6;*/
-    border-right: 3px solid #EEE; }
+    /*box-shadow: 0px 20px 20px #D6D6D6;*/
+    border-right: 1px solid #BEBEBE; }
+    #content_wrapper aside.fix-aside {
+      position: fixed; }
     #content_wrapper aside h2 {
       font-size: 14px;
       text-transform: uppercase;
@@ -109,7 +117,8 @@ body {
         margin-top: 50px;
         font-size: 18px;
         color: #BEBEBE;
-        cursor: pointer; }
+        cursor: pointer;
+        -webkit-transition: font-size 0.2s, color 0.2s; }
         #content_wrapper aside ul li.active {
           position: relative;
           font-size: 30px;
@@ -122,7 +131,8 @@ body {
             font-size: 16px;
             font-family: "Avenir"; }
   #content_wrapper main {
-    width: 100%; }
+    width: calc(100% - $asideWidth - 2 * $asidePadding);
+    margin-left: 320px; }
     #content_wrapper main .content_slide {
       display: flex;
       flex-direction: column;
@@ -130,70 +140,103 @@ body {
       justify-content: center; }
       #content_wrapper main .content_slide .large_desc {
         font-size: 30px;
-        max-width: 60%;
+        max-width: 70%;
         line-height: 1.37em;
         color: #BEBEBE; }
         #content_wrapper main .content_slide .large_desc .first_words {
           font-family: "Avenir Bold";
           color: #1A1A1A; }
-      #content_wrapper main .content_slide .exp_wrapper {
+
+@-webkit-keyframes blink {
+  0% {
+    background-color: #ad2230; }
+  50% {
+    background-color: #d8293a; }
+  100% {
+    background-color: #ad2230; } }
+      #content_wrapper main .content_slide .exp_wrapper, #content_wrapper main .content_slide .projects_wrapper {
         width: 100%;
         height: 100%;
         display: flex;
-        flex-direction: column;
-        /*.employer_list {
-					width: 100%;
-					margin: 0;
-					padding: 0;
-					list-style: none;
-
-					li {
-						display: flex;
-						flex-direction: row;
-						padding: 10px;
-						box-shadow: 0px 0px 5px $grey;
-						border-radius: 2px;
-						margin-top: 10px;
-
-						img {
-							max-height: 90px;
-						}
-
-						.employer_info {
-							width: 100%;
-
-							p {
-								margin: 0 10px;
-							}
-
-							.employer_name {
-								font-family: "Avenir Bold";
-								font-size: 17px;
-							}
-
-							.employer_desc {
-								margin: 10px;
-								color: $black;
-								font-size: $smallFont;
-							}
-						}
-					}
-				}*/ }
-        #content_wrapper main .content_slide .exp_wrapper .exp_row {
+        flex-direction: column; }
+        #content_wrapper main .content_slide .exp_wrapper .exp_row, #content_wrapper main .content_slide .exp_wrapper .projects_row, #content_wrapper main .content_slide .projects_wrapper .exp_row, #content_wrapper main .content_slide .projects_wrapper .projects_row {
           width: 100%;
           height: 100%;
           display: flex;
           flex-direction: row; }
-          #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell {
+          #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; }
-            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc {
+            justify-content: center;
+            text-align: center;
+            cursor: pointer; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc .employer_location {
+              display: none; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc .employer_desc {
+              display: block; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell h3, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell h3, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell h3, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell h3, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell h3, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell h3, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell h3, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell h3 {
+              margin: 0; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell h3.employer_desc, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell h3.employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell h3.employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell h3.employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell h3.employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell h3.employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell h3.employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell h3.employer_desc {
+                max-width: 80%;
+                display: none; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell p.employer_location, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell p.employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell p.employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell p.employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell p.employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell p.employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell p.employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell p.employer_location {
+              color: #1A1A1A;
+              margin-top: 20px;
+              font-family: "Karla Bold";
+              font-size: 14px;
+              text-transform: uppercase;
+              letter-spacing: 0.12em; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#onlygrowth {
+              background-color: rgba(35, 173, 75, 0.95); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#mozzaz {
+              background-color: rgba(43, 167, 223, 0.95); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#klick, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#klick, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#klick, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#klick, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#klick, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#klick, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#klick, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#klick {
+              background-color: rgba(73, 83, 123, 0.95); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#whats_next {
+              background-color: rgba(173, 34, 48, 0.95);
+              -webkit-animation-name: blink;
+              -webkit-animation-duration: 1s;
+              -webkit-animation-iteration-count: infinite; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .large_desc {
               width: auto;
               max-width: none;
               line-height: 1em; }
-              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc .grey {
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc .white, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .large_desc .white, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .large_desc .white, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .large_desc .white, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .large_desc .white, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .large_desc .white, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .large_desc .white, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .large_desc .white {
+                color: white;
                 font-size: 25px; }
+
+@media screen and (max-width: 950px) {
+  #content_wrapper aside {
+    display: none; }
+  #content_wrapper main {
+    width: 100%;
+    margin: 0; } }
+
+@media screen and (max-width: 700px) {
+  .main_heading h1 {
+    font-size: 75px !important; }
+  .subtitle {
+    display: none; }
+  .main_right_corner {
+    display: none; }
+  .main_left_corner {
+    width: 400px;
+    bottom: 25px !important;
+    left: 25px !important; } }
+
+@media screen and (max-width: 550px) {
+  .large_desc {
+    font-size: 25px !important; } }
+
+@media screen and (max-width: 530px) {
+  .exp_row {
+    flex-direction: column !important; }
+    .exp_row .exp_cell {
+      height: 50% !important; } }
+
+@media screen and (max-width: 500px) {
+  .main_left_corner {
+    width: calc(100% - 50px); } }

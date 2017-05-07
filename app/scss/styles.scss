@@ -17,17 +17,24 @@ body {
 		color: inherit;
 	}
 
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+ 	-khtml-user-select: none;
+ 	-moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 }
 
 #main_wrapper {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: auto;
 	background: $black;
 	color: #FFF;
-	box-shadow: 0px 0px 15px $black;
+	/*box-shadow: 0px 0px 15px $black;*/
 
 	$headingHeight: 90px;
 	.main_heading {
@@ -98,7 +105,7 @@ body {
 }
 
 #content_wrapper {
-	position: absolute;
+	position: relative;
 	top: auto;
 	left: 0;
 	width: 100%;
@@ -106,14 +113,20 @@ body {
 	display: flex;
 	flex-direction: row;
 
+	$asideWidth: 220px;
+	$asidePadding: 50px;
 	aside {
-		position: relative;
+		position: absolute;
 		top: 0;
-		padding: 50px;
-		width: auto;
+		padding: $asidePadding;
+		width: $asideWidth;
 		height: 100%;
-		/*box-shadow: 0px 5px 20px #D6D6D6;*/
-		border-right: 3px solid #EEE;
+		/*box-shadow: 0px 20px 20px #D6D6D6;*/
+		border-right: 1px solid #BEBEBE;
+
+		&.fix-aside {
+			position: fixed;
+		}
 
 		h2 {
 			font-size: $smallFont;
@@ -134,6 +147,7 @@ body {
 				font-size: 18px;
 				color: $grey;
 				cursor: pointer;
+				-webkit-transition: font-size 0.2s, color 0.2s;
 
 				&.active {
 					position: relative;
@@ -154,9 +168,10 @@ body {
 	}
 
 	main {
-		width: 100%;
+		width: calc(100% - $asideWidth - 2 * $asidePadding);
+		margin-left: $asideWidth + 2 * $asidePadding;
 
-		$contentWidth: 60%;
+		$contentWidth: 70%;
 		.content_slide {
 			display: flex;
 			flex-direction: column;
@@ -175,78 +190,156 @@ body {
 				}
 			}
 
-			.exp_wrapper {
+			@-webkit-keyframes blink {
+				0% {
+					background-color: rgba(173, 34, 48, 1);
+				}
+
+				50% {
+					background-color: rgb(216, 41, 58);
+				}
+
+				100% {
+					background-color: rgba(173, 34, 48, 1);
+				}
+			}
+
+			.exp_wrapper, .projects_wrapper {
 				width: 100%;
 				height: 100%;
 				display: flex;
 				flex-direction: column;
 
-				.exp_row {
+				.exp_row, .projects_row {
 					width: 100%;
 					height: 100%;
 					display: flex;
 					flex-direction: row;
 
-					.exp_cell {
+					.exp_cell, .projects_cell {
 						width: 100%;
-						height: 100%;
+						height: auto;
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						justify-content: center;
+						text-align: center;
+						cursor: pointer;
+
+						&.show_desc {
+							h3:first-child, .employer_location {
+								display: none;
+							}
+							.employer_desc {
+								display: block;
+							}
+						}
+
+						h3 {
+							margin: 0;
+
+							&.employer_desc {
+								max-width: 80%;
+								display: none;
+							}
+						}
+
+						p.employer_location {
+							color: $black;
+							margin-top: 20px;
+							font-family: "Karla Bold";
+							font-size: $smallFont;
+							text-transform: uppercase;
+							letter-spacing: 0.12em;
+						}
+
+						$employer_opacity: 0.95;
+
+						&#onlygrowth {
+							background-color: rgba(35, 173, 75, $employer_opacity);
+						}
+
+						&#mozzaz {
+							background-color: rgba(43, 167, 223, $employer_opacity);
+						}
+
+						&#klick {
+							background-color: rgba(73, 83, 123, $employer_opacity);
+						}
+
+						&#whats_next {
+							background-color: rgba(173, 34, 48, $employer_opacity);
+							-webkit-animation-name: blink;
+							-webkit-animation-duration: 1s;
+							-webkit-animation-iteration-count: infinite;
+						}
 
 						.large_desc {
 							width: auto;
 							max-width: none;
 							line-height: 1em;
 
-							.grey {
+							.white {
+								color: white;
 								font-size: 25px;
 							}
 						}
 					}
 				}
-
-				/*.employer_list {
-					width: 100%;
-					margin: 0;
-					padding: 0;
-					list-style: none;
-
-					li {
-						display: flex;
-						flex-direction: row;
-						padding: 10px;
-						box-shadow: 0px 0px 5px $grey;
-						border-radius: 2px;
-						margin-top: 10px;
-
-						img {
-							max-height: 90px;
-						}
-
-						.employer_info {
-							width: 100%;
-
-							p {
-								margin: 0 10px;
-							}
-
-							.employer_name {
-								font-family: "Avenir Bold";
-								font-size: 17px;
-							}
-
-							.employer_desc {
-								margin: 10px;
-								color: $black;
-								font-size: $smallFont;
-							}
-						}
-					}
-				}*/
-
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 950px) {
+	#content_wrapper aside {
+		display: none;
+	}
+
+	#content_wrapper main {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.main_heading h1 {
+		font-size: 75px!important;
+	}
+
+	.subtitle {
+		display: none;
+	}
+
+	.main_right_corner {
+		display: none;
+	}
+	.main_left_corner {
+		width: 400px;
+		bottom: 25px!important;
+		left: 25px!important;
+
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.large_desc {
+		font-size: 25px!important;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.exp_row {
+		flex-direction: column!important;
+
+		.exp_cell {
+			height: 50%!important;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.main_left_corner {
+		width: calc(100% - 50px);
 	}
 }
