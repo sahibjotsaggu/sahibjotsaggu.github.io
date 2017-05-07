@@ -32,6 +32,19 @@ gulp.task('fonts', function() {
   	.pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('images_for_gh', function() {
+	return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+		.pipe(cache(imagemin({
+			interlaced: true
+		})))
+		.pipe(gulp.dest('images'));
+});
+
+gulp.task('fonts_for_gh', function() {
+  return gulp.src('app/fonts/**/*')
+  	.pipe(gulp.dest('fonts'));
+});
+
 gulp.task('bSync', function() {
 	bSync.init({
 		server: {
@@ -56,6 +69,20 @@ gulp.task('clean:dist', function() {
 
 gulp.task('cache:clear', function (callback) {
 	return cache.clearAll(callback);
+});
+
+gulp.task('useref_for_gh', function() {
+	return gulp.src('app/*.html')
+		.pipe(useref())
+		// Minifies only if it's a js file
+		.pipe(gulpIf('*.js', uglify()))
+		// Minifies only if it's a css file
+		.pipe(gulpIf('*.css', cssnano()))
+		.pipe(gulp.dest(''));
+});
+
+gulp.task('build_for_gh', function(callback) {
+	runSequence('useref_for_gh', 'images_for_gh', 'fonts_for_gh', callback);
 });
 
 // run 'bSync' task before running the watch tasks
