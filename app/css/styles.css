@@ -164,6 +164,10 @@ body {
           height: 100%;
           display: flex;
           flex-direction: row; }
+          #content_wrapper main .content_slide .exp_wrapper .exp_row a, #content_wrapper main .content_slide .exp_wrapper .projects_row a, #content_wrapper main .content_slide .projects_wrapper .exp_row a, #content_wrapper main .content_slide .projects_wrapper .projects_row a {
+            display: flex;
+            width: 100%;
+            height: 100%; }
           #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell {
             width: 100%;
             height: auto;
@@ -172,7 +176,24 @@ body {
             align-items: center;
             justify-content: center;
             text-align: center;
-            cursor: pointer; }
+            cursor: pointer;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .projects_overlay, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .projects_overlay, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .projects_overlay, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .projects_overlay, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .projects_overlay, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .projects_overlay, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .projects_overlay, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .projects_overlay {
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.4);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              -webkit-transition: background-color 0.2s; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .projects_overlay:hover, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .projects_overlay:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .projects_overlay:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .projects_overlay:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .projects_overlay:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .projects_overlay:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .projects_overlay:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .projects_overlay:hover {
+                background-color: transparent; }
+                #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .projects_overlay:hover h3, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .projects_overlay:hover h3 {
+                  display: none; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc .employer_location, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc h3:first-child, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc .employer_location {
               display: none; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell.show_desc .employer_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell.show_desc .employer_desc {
@@ -188,18 +209,36 @@ body {
               font-family: "Karla Bold";
               font-size: 14px;
               text-transform: uppercase;
-              letter-spacing: 0.12em; }
+              letter-spacing: 0.12em;
+              margin-bottom: 0; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#onlygrowth, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#onlygrowth {
-              background-color: rgba(35, 173, 75, 0.95); }
+              background-color: rgba(35, 173, 75, 0.95);
+              -webkit-transition: background-color 0.2s; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#onlygrowth:hover, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#onlygrowth:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#onlygrowth:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#onlygrowth:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#onlygrowth:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#onlygrowth:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#onlygrowth:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#onlygrowth:hover {
+                background-color: #23ad4b; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#mozzaz, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#mozzaz, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#mozzaz {
-              background-color: rgba(43, 167, 223, 0.95); }
+              background-color: rgba(43, 167, 223, 0.95);
+              -webkit-transition: background-color 0.2s; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#mozzaz:hover, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#mozzaz:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#mozzaz:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#mozzaz:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#mozzaz:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#mozzaz:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#mozzaz:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#mozzaz:hover {
+                background-color: #2ba7df; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#klick, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#klick, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#klick, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#klick, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#klick, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#klick, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#klick, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#klick {
-              background-color: rgba(73, 83, 123, 0.95); }
+              background-color: rgba(73, 83, 123, 0.95);
+              -webkit-transition: background-color 0.2s; }
+              #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#klick:hover, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#klick:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#klick:hover, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#klick:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#klick:hover, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#klick:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#klick:hover, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#klick:hover {
+                background-color: #49537b; }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#whats_next, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#whats_next, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#whats_next {
               background-color: rgba(173, 34, 48, 0.95);
               -webkit-animation-name: blink;
               -webkit-animation-duration: 1s;
               -webkit-animation-iteration-count: infinite; }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#lani, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#lani, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#lani, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#lani, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#lani, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#lani, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#lani, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#lani {
+              background-image: url("../images/lanilabs.jpg"); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#citykit, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#citykit, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#citykit, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#citykit, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#citykit, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#citykit, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#citykit, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#citykit {
+              background-image: url("../images/citykit.jpg"); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#uwnrg, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#uwnrg, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#uwnrg, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#uwnrg, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#uwnrg, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#uwnrg, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#uwnrg, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#uwnrg {
+              background-image: url("../images/uwnrg.jpg"); }
+            #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell#wathelp, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell#wathelp, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell#wathelp, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell#wathelp, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell#wathelp, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell#wathelp, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell#wathelp, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell#wathelp {
+              background-image: url("../images/wathelp.jpg"); }
             #content_wrapper main .content_slide .exp_wrapper .exp_row .exp_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .exp_row .projects_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .exp_cell .large_desc, #content_wrapper main .content_slide .exp_wrapper .projects_row .projects_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .exp_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .exp_row .projects_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .exp_cell .large_desc, #content_wrapper main .content_slide .projects_wrapper .projects_row .projects_cell .large_desc {
               width: auto;
               max-width: none;
@@ -232,9 +271,9 @@ body {
     font-size: 25px !important; } }
 
 @media screen and (max-width: 530px) {
-  .exp_row {
+  .exp_row, .projects_row {
     flex-direction: column !important; }
-    .exp_row .exp_cell {
+    .exp_row .exp_cell, .exp_row #citykit, .exp_row #wathelp, .projects_row .exp_cell, .projects_row #citykit, .projects_row #wathelp {
       height: 50% !important; } }
 
 @media screen and (max-width: 500px) {

@@ -216,6 +216,12 @@ body {
 					display: flex;
 					flex-direction: row;
 
+					a {
+						display: flex;
+						width: 100%;
+						height: 100%;
+					}
+
 					.exp_cell, .projects_cell {
 						width: 100%;
 						height: auto;
@@ -225,6 +231,29 @@ body {
 						justify-content: center;
 						text-align: center;
 						cursor: pointer;
+						background-size: cover;
+						background-position: center center;
+						background-repeat: no-repeat;
+
+						.projects_overlay {
+							width: 100%;
+							height: 100%;
+							background-color: rgba(0,0,0,0.4);
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							text-align: center;
+							-webkit-transition: background-color 0.2s;
+
+							&:hover {
+								background-color: rgba(0,0,0,0);
+
+								h3 {
+									display: none;
+								}
+							}
+						}
 
 						&.show_desc {
 							h3:first-child, .employer_location {
@@ -251,20 +280,36 @@ body {
 							font-size: $smallFont;
 							text-transform: uppercase;
 							letter-spacing: 0.12em;
+							margin-bottom: 0;
 						}
 
 						$employer_opacity: 0.95;
 
 						&#onlygrowth {
 							background-color: rgba(35, 173, 75, $employer_opacity);
+							-webkit-transition: background-color 0.2s;
+
+							&:hover {
+								background-color: rgba(35, 173, 75, 1);
+							}
 						}
 
 						&#mozzaz {
 							background-color: rgba(43, 167, 223, $employer_opacity);
+							-webkit-transition: background-color 0.2s;
+
+							&:hover {
+								background-color: rgba(43, 167, 223, 1);
+							}
 						}
 
 						&#klick {
 							background-color: rgba(73, 83, 123, $employer_opacity);
+							-webkit-transition: background-color 0.2s;
+
+							&:hover {
+								background-color: rgba(73, 83, 123, 1);
+							}
 						}
 
 						&#whats_next {
@@ -272,6 +317,22 @@ body {
 							-webkit-animation-name: blink;
 							-webkit-animation-duration: 1s;
 							-webkit-animation-iteration-count: infinite;
+						}
+
+						&#lani {
+							background-image: url('../images/lanilabs.jpg');
+						}
+
+						&#citykit {
+							background-image: url('../images/citykit.jpg');
+						}
+
+						&#uwnrg {
+							background-image: url('../images/uwnrg.jpg');
+						}
+
+						&#wathelp {
+							background-image: url('../images/wathelp.jpg');
 						}
 
 						.large_desc {
@@ -329,10 +390,10 @@ body {
 }
 
 @media screen and (max-width: 530px) {
-	.exp_row {
+	.exp_row, .projects_row {
 		flex-direction: column!important;
 
-		.exp_cell {
+		.exp_cell, #citykit, #wathelp {
 			height: 50%!important;
 		}
 	}
