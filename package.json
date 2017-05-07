@@ -1,0 +1,30 @@
+{
+  "name": "new_site",
+  "version": "1.0.0",
+  "description": "Personal website for Sahibjot Saggu",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sahibjotsaggu/sahibjotsaggu.github.io.git"
+  },
+  "author": "Sahibjot Saggu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahibjotsaggu/sahibjotsaggu.github.io/issues"
+  },
+  "homepage": "https://github.com/sahibjotsaggu/sahibjotsaggu.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-minify": "0.0.15",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^1.2.2"
+  }
+}
