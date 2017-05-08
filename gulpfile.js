@@ -20,7 +20,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('images', function() {
-	return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+	return gulp.src('app/images/**/*.+(png|jpg|gif|svg|ico)')
 		.pipe(cache(imagemin({
 			interlaced: true
 		})))
@@ -33,7 +33,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('images_for_gh', function() {
-	return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+	return gulp.src('app/images/**/*.+(png|jpg|gif|svg|ico)')
 		.pipe(cache(imagemin({
 			interlaced: true
 		})))
