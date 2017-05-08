@@ -2,7 +2,13 @@ $(document).ready(function() {
 	console.log('Ready for domination!');
 	$('#main_wrapper').css('height', $(window).height());
 	$('#date_content').html(formatDate(new Date()));
+
 	$('.content_slide').css('height', $(window).height());
+
+	if ($(window).width() <= 530) {
+		$('#id_second_section').css('height', 2 * $(window).height());
+		$('#id_third_section').css('height', 2 * $(window).height());
+	}
 
 	$('#content_wrapper aside ul li').on('click', function() {
 		var nav_link = $(this).attr('id').substring(0, $(this).attr('id').indexOf('_'));
@@ -27,6 +33,16 @@ $(document).ready(function() {
 		}
 	});
 
+	$(window).resize(function() {
+		if ($(window).width() > 530) {
+			$('#id_second_section').css('height', $(window).height());
+			$('#id_third_section').css('height', $(window).height());
+		} else {
+			$('#id_second_section').css('height', 2 * $(window).height());
+			$('#id_third_section').css('height', 2 * $(window).height());
+		}
+	});
+
 	$(window).scroll(function() {
 		var windowTop = $(window).scrollTop();
 		// make side nav fixed when scrolled past the fold
@@ -35,12 +51,6 @@ $(document).ready(function() {
 		} else {
 			$('#content_wrapper aside').removeClass('fix-aside');
 		}
-
-
-	});
-
-	$(window).scroll(function() {
-		var windowTop = $(window).scrollTop();
 
 		var content_height = $('.content_slide').height();
 
