@@ -34,6 +34,8 @@ $(document).ready(function() {
 	});
 
 	$(window).resize(function() {
+		$('#main_wrapper').css('height', $(window).height());
+		$('.content_slide').css('height', $(window).height());
 		if ($(window).width() > 530) {
 			$('#id_second_section').css('height', $(window).height());
 			$('#id_third_section').css('height', $(window).height());
