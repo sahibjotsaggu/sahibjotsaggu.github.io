@@ -1,11 +1,14 @@
 @font-face {
   font-family: 'AvenirNext';
-  font-style: normal;
   src: url(https://sahibjot.ca/fonts/Avenir_Demi.otf);
 }
 
 @font-face {
   font-family: 'AvenirNextRegular';
-  font-style: normal;
   src: url(https://sahibjot.ca/fonts/Avenir_Roman.otf);
+}
+
+@font-face {
+  font-family: 'AvenirNextBold';
+  src: url(https://sahibjot.ca/fonts/Avenir_Black.otf);
 }
