@@ -3,3 +3,9 @@
   font-style: normal;
   src: url(https://sahibjot.ca/fonts/Avenir_Demi.otf);
 }
+
+@font-face {
+  font-family: 'AvenirNextRegular';
+  font-style: normal;
+  src: url(https://sahibjot.ca/fonts/Avenir_Roman.otf);
+}
