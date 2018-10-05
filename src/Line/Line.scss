@@ -1,0 +1,26 @@
+.line {
+  color: rgb(0, 255, 0);
+  font-family: "Fira Code Medium";
+  display: inline-block;
+  font-size: 14px;
+  width: 100%;
+  word-wrap: break-word;
+
+  &.close-command {
+    color: #fff;
+  }
+
+  /*&:after {
+    content: 'i';
+    width: 5px;
+    height: 20px;
+    background: rgb(0, 255, 0);
+    animation: blink 1s infinite;
+  }*/
+}
+
+@keyframes blink {
+  0% {opacity: 0}
+  49%{opacity: 0}
+  50% {opacity: 1}
+}

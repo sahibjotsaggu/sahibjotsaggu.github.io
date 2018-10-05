@@ -1,0 +1,33 @@
+.editor {
+  margin: 10px auto;
+  width: 700px;
+  padding: 13px 20px 20px 20px;
+  background-color: rgb(17, 18, 19);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  @media (max-width: 750px) {
+    width: calc(100% - 60px);
+  }
+}
+
+.action-buttons {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.circle {
+  display: inline-block;
+  border-radius: 100%;
+  margin-left: 8px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
