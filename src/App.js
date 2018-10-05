@@ -5,6 +5,8 @@ import './App.scss';
 
 const createWebsite = `import React from "react";
 import { Link } from "react-router-dom";
+import Email from './Email';
+ 
 const name = "Sahibjot Saggu";
 const githubLink = "https://www.github.com/sahibjotsaggu";
 const linkedInLink = "https://www.linkedin.com/in/sahibjotsaggu";
@@ -15,6 +17,7 @@ class Website extends React.Component {
     return (
       <React.Fragment>
         <Name content={name} />
+        <Email />
         <Link to={githubLink}>Github</Link>
         <Link to={linkedInLink}>LinkedIn</Link>
         <Link to={resume}>Resume</Link>
@@ -45,10 +48,13 @@ class App extends Component {
     return (
       <main>
         { this.state.showEditor ? (
-          <Editor 
-            contentSequence={[createWebsite, start]} 
-            sequenceComplete={this.showSite}
-          />
+          <React.Fragment>
+            <h1>Creating page...</h1>
+            <Editor 
+              contentSequence={[createWebsite, start]} 
+              sequenceComplete={this.showSite}
+            />
+          </React.Fragment>
           ) : 
           <Site /> 
         }

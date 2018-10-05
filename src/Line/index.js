@@ -24,7 +24,7 @@ class Line extends Component {
           if (letter + 1 === this.props.text.length) {
             this.props.doneLine(this.props.isLast);
           }
-        }, this.props.isLast ? letter * 100 : letter * 5);
+        }, this.props.isLast ? letter * 100 : letter * 20);
       }
     }, startDelay);
   }

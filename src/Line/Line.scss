@@ -1,10 +1,9 @@
 .line {
   color: rgb(0, 255, 0);
-  font-family: "Fira Code Medium";
+  font-family: "Fira Code Light";
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   width: 100%;
-  word-wrap: break-word;
 
   &.close-command {
     color: #fff;

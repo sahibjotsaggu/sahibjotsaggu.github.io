@@ -1,23 +1,8 @@
 @font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Karla Bold'), local('Karla-Bold'), url('assets/fonts/qkBWXvYC6trAT7zuC8m5xLtlmgzD.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'Fira Code Bold';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Fira Code Bold'), local('Fira Code Bold'), url('assets/fonts/FiraCode-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Fira Code Medium';
+  font-family: 'Fira Code Light';
   font-style: normal;
   font-weight: 500;
-  src: local('Fira Code Medium'), local('Fira Code Medium'), url('assets/fonts/FiraCode-Medium.woff2') format('woff2');
+  src: local('Fira Code Light'), local('Fira Code Light'), url('assets/fonts/FiraCode-Light.woff2') format('woff2');
 }
 
 
@@ -25,7 +10,8 @@ body {
   background-color: #FFF;
   margin: 0;
   padding: 0;
-  font-family: "Karla", sans-serif;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
