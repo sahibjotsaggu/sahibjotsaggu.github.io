@@ -8,6 +8,10 @@ self.__precacheManifest = [
     "url": "/static/media/ubiq_icon_blue.ce2a00e4.svg"
   },
   {
+    "revision": "42742149b69f679a64cdfb5246da4980",
+    "url": "/static/media/sahibjot96_2.42742149.png"
+  },
+  {
     "revision": "4cb1e35ee11e8ecc4bb5c37edaea498e",
     "url": "/static/media/mozzaz-logo.4cb1e35e.png"
   },
@@ -24,15 +28,15 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
-    "revision": "2cd22627aaa8684b6e58",
-    "url": "/static/js/main.2cd22627.chunk.js"
+    "revision": "5b4598d2ef62c9d81859",
+    "url": "/static/js/main.5b4598d2.chunk.js"
   },
   {
-    "revision": "15f2af997b347b69f341",
-    "url": "/static/js/1.15f2af99.chunk.js"
+    "revision": "36d68b69507f66bde879",
+    "url": "/static/js/1.36d68b69.chunk.js"
   },
   {
-    "revision": "14971af92c3b79f73252e1853085d5de",
+    "revision": "1c61290d8f59ff81e3f3ea59ff672afb",
     "url": "/index.html"
   }
 ];
