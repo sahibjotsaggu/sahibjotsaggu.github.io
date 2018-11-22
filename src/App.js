@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Experience from './sections/experience';
-import Education from './sections/education';
-import Contact from './sections/contact';
+import Experience from 'sections/experience';
+import Education from 'sections/education';
+import Contact from 'sections/contact';
+import Web from 'components/web';
 
 const Track = styled.div`
   width: 500px;
@@ -29,13 +30,16 @@ const Subtitle = styled.h3`
 `;
 
 const App = () => (
-  <Track>
-    <Name>Sahibjot Saggu</Name>
-    <Subtitle>Frontend Web Developer</Subtitle>
-    <Experience />
-    <Education />
-    <Contact />
-  </Track>
+  <React.Fragment>
+    <Track>
+      <Name>Sahibjot Saggu</Name>
+      <Subtitle>Frontend Web Developer</Subtitle>
+      <Experience />
+      <Education />
+      <Contact />
+    </Track>
+    <Web />
+  </React.Fragment>
 )
 
 export default App;
