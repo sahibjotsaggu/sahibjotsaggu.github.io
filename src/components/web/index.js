@@ -19,6 +19,7 @@ const StyledWeb = styled.div`
     position: absolute;
     bottom: unset;
     right: unset;
+    width: 100%;
     top: 0;
     left: 0;
     transform: rotate(180deg);
